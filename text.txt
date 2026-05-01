@@ -3,15 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSC GAMES</title>
+    <title>DSC Notepad</title>
     <style>
-        body { background-color: #1a1a1a; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
-        .btn { background-color: #ff4757; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; display: inline-block; margin-top: 20px; font-weight: bold; }
+        body { background: #121212; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        textarea { width: 90%; height: 200px; background: #1e1e1e; color: white; border: 1px solid #ff4757; border-radius: 10px; padding: 10px; font-size: 16px; }
+        .btn { background: #ff4757; color: white; padding: 15px 30px; border: none; border-radius: 25px; margin-top: 20px; cursor: pointer; font-weight: bold; }
+        #status { margin-top: 10px; color: #2ecc71; }
     </style>
 </head>
 <body>
-    <h1>ب خێر بێی بۆ DSC GAMES</h1>
-    <p>ئەڤە ئاپلیکەیشنا مەیا نوی یە</p>
-    <a href="#" class="btn">دەستپێ بکە</a>
+    <h1>DSC NOTEPAD</h1>
+    <p>تێبینییێن خوە ل ڤێرێ بنڤێسە:</p>
+    <textarea id="noteArea" placeholder="ل ڤێرێ بنڤێسە..."></textarea>
+    <br>
+    <button class="btn" onclick="saveNote()">Save Note</button>
+    <p id="status"></p>
+
+    <script>
+        // بو خەزنکرنا نڤێسێ د ناڤ موبایلێ دا
+        function saveNote() {
+            const note = document.getElementById('noteArea').value;
+            localStorage.setItem('userNote', note);
+            document.getElementById('status').innerText = "تێبینی هاتە پاراستن!";
+            setTimeout(() => { document.getElementById('status').innerText = ""; }, 2000);
+        }
+
+        // بۆ نیشاندانا نڤێسێ دەما بەرنامە ڤەدبیت
+        window.onload = function() {
+            const savedNote = localStorage.getItem('userNote');
+            if (savedNote) {
+                document.getElementById('noteArea').value = savedNote;
+            }
+        }
+    </script>
 </body>
 </html>
