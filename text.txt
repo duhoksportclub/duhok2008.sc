@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSC GAMES</title>
+    <style>
+        body { background-color: #1a1a1a; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
+        .btn { background-color: #ff4757; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; display: inline-block; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>ب خێر بێی بۆ DSC GAMES</h1>
+    <p>ئەڤە ئاپلیکەیشنا مەیا نوی یە</p>
+    <a href="#" class="btn">دەستپێ بکە</a>
+</body>
+</html>
