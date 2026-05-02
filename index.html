@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdish Premier League</title>
+    <title>Duhok SC - یاریێن بهێت</title>
     <style>
         body {
             background-color: #000000;
             color: #ffffff;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -21,57 +21,62 @@
         }
         .header {
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0;
             border-bottom: 2px solid #333;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .header h1 {
             color: #ffcc00;
-            font-size: 28px;
-            letter-spacing: 1px;
+            font-size: 26px;
+            margin: 0;
         }
         .match-card {
             background: #111;
             border-radius: 20px;
             padding: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid #222;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            position: relative;
         }
-        .league-title {
+        .league-name {
             color: #0088ff;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 10px;
             display: block;
+            margin-bottom: 10px;
         }
         .teams {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
+            margin: 15px 0;
         }
         .vs {
             color: #ffcc00;
             font-size: 14px;
             background: #222;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 10px;
         }
-        .btn-live {
-            display: block;
-            width: 100%;
-            background: #ffcc00;
-            color: #000;
-            text-align: center;
-            padding: 15px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 16px;
+        .match-info {
+            border-top: 1px solid #222;
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #aaaaaa;
+        }
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .info-label {
+            color: #ffcc00;
+            font-size: 11px;
+            margin-bottom: 3px;
         }
     </style>
 </head>
@@ -79,30 +84,56 @@
 
 <div class="app-container">
     <div class="header">
-        <h1>خولا نایاب</h1>
+        <h1>یاریێن یانەیا دهۆکێ</h1>
     </div>
 
-    <!-- پشکا یارییان: تو دشێی ل ڤێرە ناڤان بگوهۆڕی -->
+    <!-- یارییا ١: خولا نایابا کوردستانێ -->
     <div class="match-card">
-        <span class="league-title">خولا نایابا کوردستانێ</span>
+        <span class="league-name">خولا نایابا کوردستانێ</span>
         <div class="teams">
             <span>دهۆک</span>
             <span class="vs">VS</span>
-            <span>زاخۆ</span>
+            <span>ناڤێ تیپێ</span>
+        </div>
+        <div class="match-info">
+            <div class="info-item">
+                <span class="info-label">ڕۆژ</span>
+                <span>ئەینی</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">دەمژمێر</span>
+                <span>4:00 PM</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">بەروار</span>
+                <span>2026/05/15</span>
+            </div>
         </div>
     </div>
 
+    <!-- یارییا ٢: خولا ستێرێن عیراقێ -->
     <div class="match-card">
-        <span class="league-title">خولا ستێرێن عیراقێ</span>
+        <span class="league-name">خولا ستێرێن عیراقێ</span>
         <div class="teams">
             <span>دهۆک</span>
             <span class="vs">VS</span>
-            <span>القوة الجوية</span>
+            <span>ناڤێ تیپێ</span>
+        </div>
+        <div class="match-info">
+            <div class="info-item">
+                <span class="info-label">ڕۆژ</span>
+                <span>سێشەمب</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">دەمژمێر</span>
+                <span>7:30 PM</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">بەروار</span>
+                <span>2026/05/19</span>
+            </div>
         </div>
     </div>
-
-    <!-- دوگمەیا ئەنجامێن ڕاستەوخۆ -->
-    <a href="https://www.sofascore.com/tournament/football/iraq/kurdistan-premier-league/15383" class="btn-live">تەماشەکردنا ئەنجامێن نوو</a>
 </div>
 
 </body>
