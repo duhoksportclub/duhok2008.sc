@@ -3,149 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duhok Sport Club - Official</title>
+    <title>Duhok Sport Club</title>
     <style>
         :root {
-            --dsc-blue: #004a99;
-            --dsc-yellow: #ffcc00;
-            --dsc-dark: #050a14;
+            --main-blue: #003366;
+            --main-yellow: #ffcc00;
+            --dark-bg: #05070a;
+            --card-bg: #10141d;
         }
         body {
-            background-color: var(--dsc-dark);
+            background-color: var(--dark-bg);
             color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .header {
+        .navbar {
             width: 100%;
-            background: linear-gradient(135deg, var(--dsc-blue) 0%, #002d5e 100%);
-            padding: 30px 0;
+            background: var(--main-blue);
+            padding: 20px 0;
             text-align: center;
-            border-bottom: 4px solid var(--dsc-yellow);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            border-bottom: 4px solid var(--main-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .header h1 {
+        .navbar h1 {
             margin: 0;
-            font-size: 28px;
-            color: var(--dsc-yellow);
+            font-size: 22px;
+            color: var(--main-yellow);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
         }
         .container {
-            width: 100%;
-            max-width: 500px;
-            padding: 20px;
+            width: 90%;
+            max-width: 450px;
+            margin-top: 20px;
         }
-        .league-title {
-            text-align: center;
-            color: white;
-            font-size: 18px;
+        .league-header {
+            background: linear-gradient(to left, var(--main-blue), transparent);
+            padding: 10px 15px;
+            border-right: 4px solid var(--main-yellow);
             margin-bottom: 20px;
-            background: rgba(0, 74, 153, 0.3);
-            padding: 10px;
-            border-radius: 10px;
-            border-right: 5px solid var(--dsc-yellow);
+            font-weight: bold;
+            font-size: 16px;
         }
         .match-card {
-            background: #101826;
-            border-radius: 20px;
-            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
             margin-bottom: 15px;
-            border: 1px solid rgba(255, 204, 0, 0.1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            position: relative;
             overflow: hidden;
+            border: 1px solid #1f2633;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        .match-card::before {
-            content: "";
-            position: absolute;
-            top: 0; right: 0;
-            width: 5px; height: 100%;
-            background: var(--dsc-yellow);
-        }
-        .match-header {
+        .match-top {
+            background: rgba(255, 204, 0, 0.05);
+            padding: 10px 15px;
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: var(--dsc-yellow);
-            margin-bottom: 15px;
-            opacity: 0.8;
+            color: var(--main-yellow);
+            border-bottom: 1px solid #1f2633;
         }
-        .teams {
+        .match-content {
+            padding: 20px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 22px;
-            font-weight: 900;
         }
-        .vs-circle {
-            background: var(--dsc-blue);
-            width: 35px;
-            height: 35px;
+        .team {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 12px;
-            color: var(--dsc-yellow);
-            border: 2px solid var(--dsc-yellow);
+            width: 40%;
         }
-        .footer {
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 12px;
-            opacity: 0.4;
-            color: var(--dsc-yellow);
+        .team-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .vs-box {
+            background: var(--main-blue);
+            color: var(--main-yellow);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid var(--main-yellow);
+        }
+        .match-footer {
+            padding: 10px;
+            text-align: center;
+            background: #0d1117;
+            font-size: 13px;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-<div class="header">
+<div class="navbar">
     <h1>DUHOK SPORT CLUB</h1>
 </div>
 
 <div class="container">
-    <div class="league-title">خولا ستێرێن عیراقێ</div>
+    <div class="league-header">خولا ستێرێن عیراقێ</div>
 
-    <!-- یارییا ١ (دشێی ڤێ پشکێ کۆپی بکەی دا بگەهینیە ٣٩ یارییان) -->
+    <!-- یارییا ١ (ڤێ پشکێ کۆپی بکە بۆ هەر یارییەکێ) -->
     <div class="match-card">
-        <div class="match-header">
+        <div class="match-top">
             <span>گەڕا ١</span>
             <span>2026/05/20 | 5:00 PM</span>
         </div>
-        <div class="teams">
-            <span>دهۆک</span>
-            <div class="vs-circle">VS</div>
-            <span>ناڤێ تیپێ</span>
+        <div class="match-content">
+            <div class="team">
+                <div class="team-name">دهۆک</div>
+            </div>
+            <div class="vs-box">VS</div>
+            <div class="team">
+                <div class="team-name">ناڤێ تیپێ</div>
+            </div>
+        </div>
+        <div class="match-footer">
+            یاریگەها دهۆک یا نێودەوڵەتی
         </div>
     </div>
 
-    <!-- یارییا ٢ -->
-    <div class="match-card">
-        <div class="match-header">
-            <span>گەڕا ٢</span>
-            <span>2026/05/25 | 8:00 PM</span>
-        </div>
-        <div class="teams">
-            <span>دهۆک</span>
-            <div class="vs-circle">VS</div>
-            <span>ناڤێ تیپێ</span>
-        </div>
-    </div>
-
-</div>
-
-<div class="footer">
-    OFFICIAL PROJECT BY DUHOK2008.SC
 </div>
 
 </body>
 </html>
+
 
 
 <div class="match-card">
