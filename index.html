@@ -2,6 +2,9 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duhok Sport Club - Official</title>
     <style>
@@ -44,14 +47,16 @@
             border: 1px solid var(--dsc-yellow);
             padding: 10px;
             border-radius: 10px;
+            color: white;
         }
         .match-card {
             background: #101826;
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px 20px;
             margin-bottom: 20px;
             border: 1px solid #1f2633;
             position: relative;
+            text-align: center;
         }
         .match-card::after {
             content: "";
@@ -64,20 +69,21 @@
         .match-header {
             display: flex;
             justify-content: space-between;
-            font-size: 13px;
+            font-size: 14px;
             color: var(--dsc-yellow);
             margin-bottom: 15px;
+            font-weight: bold;
         }
         .teams {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
         .vs-text {
             color: var(--dsc-yellow);
-            margin: 0 10px;
             font-size: 18px;
         }
         .footer {
@@ -89,19 +95,50 @@
         }
         .official-tag {
             color: var(--dsc-yellow);
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
             letter-spacing: 1px;
         }
         .tiktok-id {
             display: block;
-            margin-top: 5px;
-            font-size: 12px;
-            opacity: 0.6;
+            margin-top: 8px;
+            font-size: 13px;
+            opacity: 0.7;
+            color: white;
         }
     </style>
 </head>
 <body>
+
+<div class="header">
+    <h1>DUHOK SPORT CLUB</h1>
+</div>
+
+<div class="container">
+    <div class="league-title">خولا ستێرێن عیراقێ</div>
+
+    <!-- یارییا جێگیرکری وەک تە ڤیا -->
+    <div class="match-card">
+        <div class="match-header">
+            <span>2026/05/05 | 5:30</span>
+            <span>گەڕا (33)</span>
+        </div>
+        <div class="teams">
+            <span>naft maysan</span>
+            <span class="vs-text">VS</span>
+            <span>دهۆک</span>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="official-tag">OFFICIAL PRODUCT</div>
+    <div class="tiktok-id">TIK: duhok2008.sc</div>
+</div>
+
+</body>
+</html>
+
 
 <div class="header">
     <h1>DUHOK SPORT CLUB</h1>
