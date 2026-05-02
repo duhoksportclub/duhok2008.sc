@@ -5,44 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duhok Sport Club</title>
     <style>
+        /* دیزاینەکێ سادە و ب هێز ب ڕەنگێن یانەیا دهۆکێ */
         body { 
-            background-color: #004a99; 
+            background-color: #003366; /* شینێ یانەیا دهۆکێ */
             color: white; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center; 
             margin: 0;
-            /* لێرە وێنەیەکێ جانی یێ ئاڵایێ دهۆکێ وەک باکگراوند هەیە */
-            background-image: linear-gradient(rgba(0, 74, 153, 0.8), rgba(255, 204, 0, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
+            padding: 0;
         }
         header { 
-            background-color: rgba(255, 204, 0, 0.9); 
-            padding: 20px; 
-            border-bottom: 5px solid #004a99;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background-color: #ffcc00; /* زەرەکێ جوان */
+            padding: 25px; 
+            border-bottom: 6px solid #ffffff;
         }
         header h1 { 
-            color: #004a99; 
+            color: #003366; 
             margin: 0; 
-            font-size: 32px; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 30px; 
+            font-weight: 900;
         }
-        .subtitle {
-            color: #004a99;
+        .app-title {
+            color: #003366;
+            font-size: 14px;
             font-weight: bold;
-            font-size: 16px;
+            margin-top: 5px;
         }
         .widget-container { 
-            padding: 15px; 
-            margin: 20px auto;
-            max-width: 900px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 10px;
+            margin-top: 15px;
+        }
+        iframe {
+            border-radius: 12px;
+            background: white;
         }
     </style>
 </head>
@@ -50,14 +45,14 @@
 
 <header>
     <h1>DUHOK SPORT CLUB</h1>
-    <div class="subtitle">duhok2008.sc</div>
+    <div class="app-title">duhok2008.sc</div>
 </header>
 
 <div class="widget-container">
-    <!-- سیستەمێ ئۆتۆماتیکی یێ ئەنجامێن یارییان -->
-    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=light&font=Verdana" 
+    <!-- ئەنجامێن یارییان ب شێوەیەکێ پاقژ -->
+    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=dark" 
             width="100%" 
-            height="700" 
+            height="750" 
             frameborder="0">
     </iframe>
 </div>
