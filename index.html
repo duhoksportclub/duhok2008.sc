@@ -3,71 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duhok SC Official</title>
+    <title>Duhok SC - یاریێن بهێت</title>
     <style>
         body { 
-            background: #004a99; 
-            background: linear-gradient(to bottom, #004a99, #ffcc00);
-            background-attachment: fixed;
-            color: white; margin: 0; font-family: sans-serif; text-align: center;
+            background-color: #050a14; /* باکگراوندێ تۆخ و مۆدێرن */
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            text-align: center;
         }
-        .header { background: #ffcc00; padding: 25px; border-bottom: 5px solid #004a99; position: sticky; top: 0; z-index: 100; }
-        
-        /* دروستکرنا ئاڵای ب کۆد دا تێک نەچیت */
-        .krd-flag {
-            width: 80px; height: 50px; margin: 0 auto 10px;
-            background: linear-gradient(#ED2024 33.3%, #ffffff 33.3%, #ffffff 66.6%, #278E3C 66.6%);
-            position: relative; border-radius: 5px; border: 1px solid #000;
+        .header { 
+            background: #ffcc00; 
+            padding: 20px; 
+            border-bottom: 4px solid #004a99;
         }
-        .sun {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 20px; height: 20px; background: #febd11; border-radius: 50%;
-        }
+        .header img { width: 60px; margin-bottom: 10px; }
+        .header h1 { color: #004a99; margin: 0; font-size: 22px; }
 
-        .header h1 { color: #004a99; margin: 5px 0; font-size: 24px; font-weight: bold; }
-        .nav { padding: 15px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
-        .btn { background: #004a99; color: white; padding: 12px 18px; border-radius: 25px; text-decoration: none; font-size: 13px; font-weight: bold; border: 2px solid white; }
-        
-        .card { background: white; margin: 15px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.4); border: 3px solid #ffcc00; }
-        .card-t { background: #004a99; color: white; padding: 12px; font-weight: bold; font-size: 16px; }
-        iframe { width: 100%; height: 700px; border: none; }
+        .section {
+            margin: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 15px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        .section-title {
+            color: #ffcc00;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-right: 4px solid #ffcc00;
+            padding-right: 10px;
+            text-align: right;
+        }
+        /* ستایلێ یارییێن بهێت */
+        .match-card {
+            background: #004a99;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .team-name { font-weight: bold; font-size: 14px; }
+        .vs { color: #ffcc00; font-weight: 900; }
+
+        iframe { width: 100%; height: 500px; border-radius: 15px; border: none; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="krd-flag"><div class="sun"></div></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png">
     <h1>DUHOK SPORT CLUB</h1>
-    <div style="color:#004a99; font-size: 12px; font-weight: bold;">Official App - duhok2008.sc</div>
 </div>
 
-<div class="nav">
-    <a href="#kurd" class="btn">خولا کوردستانێ ☀️</a>
-    <a href="#iraq" class="btn">خولا عیراقێ 🇮🇶</a>
+<div class="section">
+    <div class="section-title">یاریێن بهێت یێن دهۆکێ (ستێرێن عیراقێ)</div>
+    <!-- ژبەر کو وێجێت یاریێن دهۆکێ ب تەنێ نیشان نادەن، من ئەڤە ب دەستێ خۆ بۆ تە ڕێکخست -->
+    <div class="match-card">
+        <span class="team-name">دهۆک</span>
+        <span class="vs">VS</span>
+        <span class="team-name">یارییا بهێت</span>
+    </div>
+    <p style="font-size: 12px; opacity: 0.7;">بۆ دیتنا خشتەیێ گشتی یێ خولێ، تەماشەی خوارێ بکە:</p>
+    <iframe src="https://www.scoreaxis.com/widget/next-matches/854?autoHeight=1&theme=dark"></iframe>
 </div>
 
-<div id="kurd" class="card">
-    <div class="card-t">ئەنجام و یاریێن ئەڤڕۆ</div>
-    <!-- ئەڤە باشترین سیستەمە بۆ مۆبایلێ -->
-    <iframe src="https://www.sofascore.com/event/12836261/embed" style="height: 600px;"></iframe>
+<div class="section">
+    <div class="section-title">خولا نایابا کوردستانێ</div>
+    <!-- ئەڤ وێجێتە یاریێن کوردستانێ نیشان ددەت ئەگەر هەبن -->
+    <iframe src="https://ls.betradar.com/ls/widgets/?/bet365/en/page/widgets_lmts#widget/matchtoday" style="height: 600px;"></iframe>
 </div>
-
-<div id="iraq" class="card">
-    <div class="card-t">ڕێزبەندیا خولێ (Standings)</div>
-    <iframe src="https://www.scoreaxis.com/widget/league-standings/854?autoHeight=1&theme=light" style="height: 500px;"></iframe>
-</div>
-
-<script>
-    // دا دوگمە کار بکەن
-    document.querySelectorAll('.btn').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
 
 </body>
 </html>
