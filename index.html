@@ -12,15 +12,12 @@
         .header h1 { margin: 0; font-size: 28px; color: var(--dsc-yellow); letter-spacing: 2px; }
         .container { width: 100%; max-width: 450px; padding: 20px; }
         .league-title { text-align: center; font-size: 18px; margin-bottom: 25px; border: 1px solid var(--dsc-yellow); padding: 10px; border-radius: 10px; }
-        
-        /* ستایلێ وێ پارچا کورت یا تە ڤیای */
         .match-card { background: #101826; border-radius: 20px; padding: 25px 20px; margin-bottom: 20px; border: 1px solid #1f2633; position: relative; text-align: center; }
         .match-card::after { content: ""; position: absolute; top: 15%; right: 0; width: 4px; height: 70%; background: var(--dsc-yellow); border-radius: 2px; }
         .match-header { display: flex; justify-content: space-between; font-size: 14px; color: var(--dsc-yellow); margin-bottom: 15px; font-weight: bold; }
         .teams { font-size: 22px; font-weight: bold; display: flex; justify-content: center; align-items: center; gap: 10px; text-transform: uppercase; }
         .vs-text { color: var(--dsc-yellow); font-size: 16px; }
         .stadium { margin-top: 12px; font-size: 13px; color: #888; letter-spacing: 1px; }
-        
         .footer { margin-top: 30px; text-align: center; padding-bottom: 40px; }
         .official-tag { color: var(--dsc-yellow); font-size: 15px; font-weight: bold; }
         .tiktok-id { display: block; margin-top: 5px; font-size: 12px; opacity: 0.6; }
@@ -35,7 +32,7 @@
 <div class="container">
     <div class="league-title">خولا ستێرێن عیراقێ</div>
 
-    <!-- ل ڤێرێ کۆدێ خۆ یێ کورت (match-card) دانییە یان بگوهۆڕە -->
+    <!-- یارییا 1: نەفت میسان -->
     <div class="match-card">
         <div class="match-header">
             <span>2026/05/05 | 5:30</span>
@@ -46,9 +43,21 @@
             <span class="vs-text">VS</span>
             <span>DUHOK</span>
         </div>
-        <div class="stadium">
-             📍 یاریگەها دهۆک یا نێودەوڵەتی
+        <div class="stadium">📍 یاریگەها دهۆک یا نێودەوڵەتی</div>
+    </div>
+
+    <!-- یارییا 2: القاسم -->
+    <div class="match-card">
+        <div class="match-header">
+            <span>2026/10/05 | 5:30</span>
+            <span>گەڕا (34)</span>
         </div>
+        <div class="teams">
+            <span>AL QASIM</span>
+            <span class="vs-text">VS</span>
+            <span>DUHOK</span>
+        </div>
+        <div class="stadium">📍 یاریگەها دهۆک یا نێودەوڵەتی</div>
     </div>
 
     <div class="footer">
