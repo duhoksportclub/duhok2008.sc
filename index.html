@@ -3,122 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSC - Official App</title>
+    <title>Duhok Sport Club - Official</title>
     <style>
-        :root {
-            --gold: #ffcc00;
-            --blue: #004a99;
-            --dark: #050a14;
-        }
-        body { 
-            background: var(--dark); 
-            color: white; 
+        body {
+            margin: 0;
+            padding: 0;
             font-family: 'Segoe UI', sans-serif;
-            margin: 0; padding: 0;
-            /* باکگراوندەکێ 3D وەک ئاڵایی دناڤبەر شین و زەر دا */
-            background: radial-gradient(circle at top right, rgba(0,74,153,0.5), transparent),
-                        radial-gradient(circle at bottom left, rgba(255,204,0,0.3), transparent),
-                        linear-gradient(135deg, #050a14 0%, #0a1221 100%);
+            color: white;
+            /* باکگراوندەکێ 3D یێ ئاڵایێ کوردستانێ کو هەمی شاشێ دگریت */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png');
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
-            min-height: 100vh;
+            text-align: center;
         }
         header {
-            padding: 30px 15px;
-            text-align: center;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--gold);
+            padding: 40px 20px;
+            background: rgba(255, 204, 0, 0.9);
+            border-bottom: 5px solid #004a99;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
-        .flag-3d {
-            width: 120px;
-            filter: drop-shadow(0 0 15px var(--gold));
-            margin-bottom: 10px;
-            animation: float 3s ease-in-out infinite;
+        .main-title {
+            color: #004a99;
+            font-size: 35px;
+            font-weight: 900;
+            margin: 0;
+            text-shadow: 1px 1px 2px white;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .main-title { font-size: 30px; font-weight: 900; color: var(--gold); margin: 0; }
-        
-        .nav-tabs {
+        .nav-container {
             display: flex;
-            overflow-x: auto;
-            background: rgba(255,255,255,0.05);
-            padding: 10px;
+            justify-content: center;
             gap: 10px;
-            position: sticky;
-            top: 0; z-index: 100;
+            padding: 20px;
+            flex-wrap: wrap;
         }
-        .tab {
-            background: rgba(255,255,255,0.1);
-            padding: 8px 20px;
-            border-radius: 12px;
-            white-space: nowrap;
-            font-size: 13px;
-            border: 1px solid rgba(255,204,0,0.3);
-            color: var(--gold);
+        .btn {
+            background: #004a99;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #ffcc00;
+            font-size: 14px;
         }
-
-        .section-card {
-            margin: 15px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 25px;
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px auto;
+            max-width: 95%;
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 4px solid #ffcc00;
         }
         .card-header {
-            background: var(--blue);
+            background: #004a99;
             color: white;
-            padding: 12px;
+            padding: 15px;
+            font-size: 18px;
             font-weight: bold;
-            display: flex;
-            justify-content: space-between;
         }
-        iframe { width: 100%; border: none; }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png" class="flag-3d">
     <h1 class="main-title">DUHOK SPORT CLUB</h1>
-    <p style="margin:5px; opacity:0.8;">ئەپلیکەیشنا فەرمی یا یانەیا دهۆکێ</p>
+    <div style="color: #004a99; font-weight: bold;">duhok2008.sc</div>
 </header>
 
-<div class="nav-tabs">
-    <div class="tab">☀️ خولا کوردستانێ</div>
-    <div class="tab">🇮🇶 خولا ستێرێن عیراقێ</div>
-    <div class="tab">📅 یاریێن بهێت</div>
-    <div class="tab">⚽ ئەنجامێن جیهانی</div>
+<div class="nav-container">
+    <div class="btn">☀️ خولا کوردستانێ</div>
+    <div class="btn">🇮🇶 خولا عیراقێ</div>
+    <div class="btn">⚽ یاریێن ئەڤڕۆ</div>
 </div>
 
-<div class="section-card">
-    <div class="card-header">
-        <span>خولا نایابا کوردستانێ u ستێرێن عیراقێ</span>
-        <span>LIVE</span>
-    </div>
-    <!-- لێرە ئەنجامێن هەمی یارییان ب شێوازەکێ نووی دێ دیار بن -->
-    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=light&font=Verdana" height="600"></iframe>
+<div class="content-card">
+    <div class="card-header">ئەنجامێن ڕاستەوخۆ (LIVE SCORES)</div>
+    <!-- ئەڤ لێنکە یێ باوەرپێکرییە و چ جاران "Outdated" نابیت -->
+    <iframe src="https://ls.betradar.com/ls/widgets/?/bet365/en/page/widgets_lmts#widget/matchtoday"></iframe>
 </div>
 
-<div class="section-card">
-    <div class="card-header">
-        <span>خشتەیێ ڕێزبەندیێ (Standings)</span>
-    </div>
-    <iframe src="https://www.scoreaxis.com/widget/league-standings/854?autoHeight=1&theme=light" height="500"></iframe>
+<div style="padding: 20px; opacity: 0.8; font-size: 12px;">
+    © 2026 Duhok Sport Club App
 </div>
-
-<div class="section-card">
-    <div class="card-header">
-        <span>یاریێن پاشەڕۆژێ (Upcoming)</span>
-    </div>
-    <iframe src="https://www.scoreaxis.com/widget/next-matches?autoHeight=1&theme=light" height="400"></iframe>
-</div>
-
-<footer style="text-align:center; padding:20px; opacity:0.5; font-size:12px;">
-    Designed for duhok2008.sc
-</footer>
 
 </body>
 </html>
