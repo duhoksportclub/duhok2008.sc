@@ -3,67 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خولا نایابا کوردستانێ</title>
+    <title>Kurdish Premier League</title>
     <style>
-        /* ل ڤێرێ تو دشێی ڕەنگان ب دلێ خۆ بگوهۆڕی */
         body {
-            background-color: #0b111a; /* ڕەنگێ پاشبنەمایێ */
-            color: white;
-            font-family: sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .app-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
         }
         .header {
-            background-color: #ffcc00; /* ڕەنگێ زەر یێ سەرەکی */
-            padding: 20px;
-            border-bottom: 5px solid #004a99;
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #333;
+            margin-bottom: 30px;
         }
-        .header h1 { color: #004a99; margin: 0; font-size: 24px; }
-        
-        .container { padding: 20px; }
-
-        /* ستایلێ ئەو پشکا تو دشێی دەستکاریێ تێدا بکەی */
-        .match-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid #ffcc00;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+        .header h1 {
+            color: #ffcc00;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
-
-        /* دوگمەیا ئەنجامان */
-        .btn-link {
+        .match-card {
+            background: #111;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #222;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .league-title {
+            color: #0088ff;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
             display: block;
-            background: #004a99;
-            color: white;
+        }
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .vs {
+            color: #ffcc00;
+            font-size: 14px;
+            background: #222;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        .btn-live {
+            display: block;
+            width: 100%;
+            background: #ffcc00;
+            color: #000;
+            text-align: center;
             padding: 15px;
-            border-radius: 12px;
+            border-radius: 15px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 30px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>خولا نایابا کوردستانێ</h1>
-</div>
-
-<div class="container">
-    
-    <!-- ل ڤێرێ تو دشێی ناڤێ یارییان ب دەستێ خۆ بنڤێسی یان دەستکاری بکەی -->
-    <div class="match-box">
-        <h3 style="color: #ffcc00;">یاریێن بهێت یێن خولێ</h3>
-        <p>دهۆک 🆚 زاخۆ</p>
-        <p>هەولێر 🆚 نەورۆز</p>
-        
-        <!-- ئەڤ لێنکە چو جاران "Error" نادەت چونکی لێنکەکێ ڕاستەوخۆیە -->
-        <a href="https://www.sofascore.com/tournament/football/iraq/kurdistan-premier-league/15383" target="_blank" class="btn-link">
-            تەماشەکردنا خشتەیێ نوو یێ خولێ
-        </a>
+<div class="app-container">
+    <div class="header">
+        <h1>خولا نایاب</h1>
     </div>
 
+    <!-- پشکا یارییان: تو دشێی ل ڤێرە ناڤان بگوهۆڕی -->
+    <div class="match-card">
+        <span class="league-title">خولا نایابا کوردستانێ</span>
+        <div class="teams">
+            <span>دهۆک</span>
+            <span class="vs">VS</span>
+            <span>زاخۆ</span>
+        </div>
+    </div>
+
+    <div class="match-card">
+        <span class="league-title">خولا ستێرێن عیراقێ</span>
+        <div class="teams">
+            <span>دهۆک</span>
+            <span class="vs">VS</span>
+            <span>القوة الجوية</span>
+        </div>
+    </div>
+
+    <!-- دوگمەیا ئەنجامێن ڕاستەوخۆ -->
+    <a href="https://www.sofascore.com/tournament/football/iraq/kurdistan-premier-league/15383" class="btn-live">تەماشەکردنا ئەنجامێن نوو</a>
 </div>
 
 </body>
