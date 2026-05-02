@@ -5,21 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSC SCORES</title>
     <style>
-        body { background-color: #000; color: white; font-family: sans-serif; text-align: center; margin: 0; }
-        header { background-color: #1a1a1a; padding: 15px; border-bottom: 2px solid #ff4757; }
-        h1 { color: #ff4757; margin: 0; font-size: 22px; }
-        .widget-container { padding: 5px; min-height: 600px; }
+        /* رەنگێن زەر و شین یێن یانەیا دهۆکێ */
+        body { 
+            background-color: #004a99; /* شینێ تۆخ */
+            color: white; 
+            font-family: sans-serif; 
+            text-align: center; 
+            margin: 0;
+            background-image: linear-gradient(180deg, #004a99 0%, #ffcc00 100%); /* تێکەلەک ژ شین و زەر */
+            min-height: 100vh;
+        }
+        header { 
+            background-color: #ffcc00; /* زەر */
+            padding: 15px; 
+            border-bottom: 4px solid #004a99; 
+        }
+        header h1 { 
+            color: #004a99; 
+            margin: 0; 
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .dsc-logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #004a99;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .widget-container { 
+            padding: 10px; 
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+        }
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>DSC SCORES ⚽</h1>
+    <div class="dsc-logo">DUHOK SPORT CLUB</div>
 </header>
 
 <div class="widget-container">
-    <!-- کۆدێ ئۆتۆماتیکی یێ ئەنجامێن یارییان -->
-    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=dark" width="100%" height="700" frameborder="0"></iframe>
+    <!-- ئەڤە لێنکێ ئەنجامێن یارییانە کو ڕاستەوخۆ ڤەدبیت -->
+    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=dark&font=Verdana" width="100%" height="700" frameborder="0"></iframe>
 </div>
 
 </body>
