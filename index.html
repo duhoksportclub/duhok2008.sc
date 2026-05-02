@@ -3,95 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duhok Sport Club - Official</title>
+    <title>Duhok Sport Club</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
+        body { 
+            background: linear-gradient(180deg, #004a99 0%, #ffcc00 100%);
+            color: white; 
             font-family: 'Segoe UI', sans-serif;
-            color: white;
-            /* باکگراوندەکێ 3D یێ ئاڵایێ کوردستانێ کو هەمی شاشێ دگریت */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            text-align: center;
-        }
-        header {
-            padding: 40px 20px;
-            background: rgba(255, 204, 0, 0.9);
-            border-bottom: 5px solid #004a99;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-        .main-title {
-            color: #004a99;
-            font-size: 35px;
-            font-weight: 900;
+            text-align: center; 
             margin: 0;
-            text-shadow: 1px 1px 2px white;
+            min-height: 100vh;
+            background-attachment: fixed;
+            scroll-behavior: smooth;
         }
+        header { 
+            background-color: rgba(255, 204, 0, 0.95); 
+            padding: 20px; 
+            border-bottom: 5px solid #004a99;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .flag-icon {
+            width: 70px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        header h1 { color: #004a99; margin: 0; font-size: 24px; }
+
         .nav-container {
             display: flex;
             justify-content: center;
             gap: 10px;
-            padding: 20px;
+            padding: 15px;
             flex-wrap: wrap;
         }
         .btn {
             background: #004a99;
             color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
+            padding: 10px 15px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            border: 2px solid #ffcc00;
-            font-size: 14px;
+            font-size: 13px;
+            border: 2px solid white;
+            cursor: pointer;
         }
-        .content-card {
-            background: rgba(255, 255, 255, 0.95);
+        .btn:active { background: #ffcc00; color: #004a99; }
+
+        .section {
+            padding: 10px;
             margin: 20px auto;
             max-width: 95%;
-            border-radius: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            border: 4px solid #ffcc00;
         }
-        .card-header {
+        .section-title {
             background: #004a99;
             color: white;
-            padding: 15px;
-            font-size: 18px;
+            padding: 10px;
             font-weight: bold;
         }
-        iframe {
-            width: 100%;
-            height: 800px;
-            border: none;
-        }
+        iframe { width: 100%; height: 600px; border: none; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="main-title">DUHOK SPORT CLUB</h1>
-    <div style="color: #004a99; font-weight: bold;">duhok2008.sc</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png" class="flag-icon">
+    <h1>DUHOK SPORT CLUB</h1>
 </header>
 
 <div class="nav-container">
-    <div class="btn">☀️ خولا کوردستانێ</div>
-    <div class="btn">🇮🇶 خولا عیراقێ</div>
-    <div class="btn">⚽ یاریێن ئەڤڕۆ</div>
+    <a href="#kurdistan" class="btn">☀️ خولا کوردستانێ</a>
+    <a href="#iraq" class="btn">🇮🇶 خولا عیراقێ</a>
+    <a href="#world" class="btn">⚽ یاریێن جیهانی</a>
 </div>
 
-<div class="content-card">
-    <div class="card-header">ئەنجامێن ڕاستەوخۆ (LIVE SCORES)</div>
-    <!-- ئەڤ لێنکە یێ باوەرپێکرییە و چ جاران "Outdated" نابیت -->
+<div id="kurdistan" class="section">
+    <div class="section-title">ئەنجامێن خولا نایابا کوردستانێ</div>
+    <!-- ژبەر کو لێنکەکێ جودا بۆ کوردستانێ نینە، ئەڤە هەمی ئەنجامان نیشان دەت -->
     <iframe src="https://ls.betradar.com/ls/widgets/?/bet365/en/page/widgets_lmts#widget/matchtoday"></iframe>
 </div>
 
-<div style="padding: 20px; opacity: 0.8; font-size: 12px;">
-    © 2026 Duhok Sport Club App
+<div id="iraq" class="section">
+    <div class="section-title">ڕێزبەندیا خولا ستێرێن عیراقێ</div>
+    <iframe src="https://www.scoreaxis.com/widget/league-standings/854?autoHeight=1&theme=light"></iframe>
+</div>
+
+<div id="world" class="section">
+    <div class="section-title">یاریێن جیهانی یێن ئەڤڕۆ</div>
+    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=light"></iframe>
 </div>
 
 </body>
