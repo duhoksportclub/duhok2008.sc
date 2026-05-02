@@ -3,110 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خولا ستێرێن عیراقێ</title>
+    <title>Duhok Sport Club - Official</title>
     <style>
+        :root {
+            --dsc-blue: #004a99;
+            --dsc-yellow: #ffcc00;
+            --dsc-dark: #050a14;
+        }
         body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: sans-serif;
+            background-color: var(--dsc-dark);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .app-container {
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, var(--dsc-blue) 0%, #002d5e 100%);
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--dsc-yellow);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: var(--dsc-yellow);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .container {
             width: 100%;
             max-width: 500px;
             padding: 20px;
         }
-        .header {
+        .league-title {
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #333;
-            margin-bottom: 25px;
-        }
-        .header h1 {
-            color: #ffcc00;
-            font-size: 26px;
-            margin: 0;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            background: rgba(0, 74, 153, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+            border-right: 5px solid var(--dsc-yellow);
         }
         .match-card {
-            background: #111;
-            border-radius: 15px;
-            padding: 15px;
+            background: #101826;
+            border-radius: 20px;
+            padding: 20px;
             margin-bottom: 15px;
-            border: 1px solid #222;
+            border: 1px solid rgba(255, 204, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .match-card::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0;
+            width: 5px; height: 100%;
+            background: var(--dsc-yellow);
         }
         .match-header {
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: #0088ff;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 5px;
+            color: var(--dsc-yellow);
+            margin-bottom: 15px;
+            opacity: 0.8;
         }
         .teams {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 22px;
+            font-weight: 900;
         }
-        .vs {
-            color: #ffcc00;
+        .vs-circle {
+            background: var(--dsc-blue);
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
             font-size: 12px;
-            background: #222;
-            padding: 4px 10px;
-            border-radius: 8px;
+            color: var(--dsc-yellow);
+            border: 2px solid var(--dsc-yellow);
+        }
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.4;
+            color: var(--dsc-yellow);
         }
     </style>
 </head>
 <body>
 
-<div class="app-container">
-    <div class="header">
-        <h1>خولا ستێرێن عیراقێ</h1>
-    </div>
+<div class="header">
+    <h1>DUHOK SPORT CLUB</h1>
+</div>
 
-    <!-- یارییا 1 (تو دشێی ڤێ پشکێ کۆپی بکەی و دانی دا ببیتە 39 یاری) -->
+<div class="container">
+    <div class="league-title">خولا ستێرێن عیراقێ</div>
+
+    <!-- یارییا ١ (دشێی ڤێ پشکێ کۆپی بکەی دا بگەهینیە ٣٩ یارییان) -->
     <div class="match-card">
         <div class="match-header">
-            <span>گەڕا 1</span>
-            <span>2026/05/05 - 5:00 PM</span>
+            <span>گەڕا ١</span>
+            <span>2026/05/20 | 5:00 PM</span>
         </div>
         <div class="teams">
             <span>دهۆک</span>
-            <span class="vs">VS</span>
+            <div class="vs-circle">VS</div>
             <span>ناڤێ تیپێ</span>
         </div>
     </div>
 
-    <!-- یارییا 2 -->
+    <!-- یارییا ٢ -->
     <div class="match-card">
         <div class="match-header">
-            <span>گەڕا 2</span>
-            <span>2026/05/05 - 5:30 PM</span>
+            <span>گەڕا ٢</span>
+            <span>2026/05/25 | 8:00 PM</span>
         </div>
         <div class="teams">
             <span>دهۆک</span>
-            <span class="vs">VS</span>
-            <span></span>NAFT MAYSAN</span>
+            <div class="vs-circle">VS</div>
+            <span>ناڤێ تیپێ</span>
         </div>
     </div>
 
+</div>
+
+<div class="footer">
+    OFFICIAL PROJECT BY DUHOK2008.SC
 </div>
 
 </body>
 </html>
+
+
 <div class="match-card">
     <div class="match-header">
         <span>گەڕا (33)</span>
-        <span>بەروار و دەمژمێر</span>
+        <span></span>2026/05/05 5:30</span>
     </div>
     <div class="teams">
         <span>دهۆک</span>
         <span class="vs">VS</span>
-        <span>تیپا بەرامبەر</span>
+        <span> naft maysan</span>
     </div>
 </div>
+
