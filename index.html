@@ -3,53 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duhok SC - یاریێن بهێت</title>
+    <title>Duhok SC - Official App</title>
     <style>
         body { 
-            background-color: #050a14; /* باکگراوندێ تۆخ و مۆدێرن */
+            background-color: #0b111a; 
             color: white; 
             font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
+            padding: 0;
             text-align: center;
         }
         .header { 
             background: #ffcc00; 
             padding: 20px; 
-            border-bottom: 4px solid #004a99;
+            border-bottom: 5px solid #004a99;
         }
-        .header img { width: 60px; margin-bottom: 10px; }
-        .header h1 { color: #004a99; margin: 0; font-size: 22px; }
+        .header img { width: 60px; margin-bottom: 10px; border-radius: 5px; }
+        .header h1 { color: #004a99; margin: 0; font-size: 22px; font-weight: 900; }
 
-        .section {
-            margin: 15px;
+        .container { padding: 15px; }
+
+        .section-box {
             background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #ffcc00;
             border-radius: 20px;
+            margin-bottom: 20px;
             padding: 15px;
-            border: 1px solid rgba(255, 204, 0, 0.3);
         }
         .section-title {
             color: #ffcc00;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 15px;
-            border-right: 4px solid #ffcc00;
-            padding-right: 10px;
-            text-align: right;
+            display: block;
         }
-        /* ستایلێ یارییێن بهێت */
-        .match-card {
-            background: #004a99;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .team-name { font-weight: bold; font-size: 14px; }
-        .vs { color: #ffcc00; font-weight: 900; }
 
-        iframe { width: 100%; height: 500px; border-radius: 15px; border: none; }
+        /* دوگمەیێن نوی بۆ یارییان */
+        .live-btn {
+            display: block;
+            background: #004a99;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 4px solid #002d5e;
+            transition: 0.3s;
+        }
+        .live-btn:active { transform: translateY(4px); border-bottom: none; }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 15px;
+            background: white;
+        }
     </style>
 </head>
 <body>
@@ -59,23 +69,26 @@
     <h1>DUHOK SPORT CLUB</h1>
 </div>
 
-<div class="section">
-    <div class="section-title">یاریێن بهێت یێن دهۆکێ (ستێرێن عیراقێ)</div>
-    <!-- ژبەر کو وێجێت یاریێن دهۆکێ ب تەنێ نیشان نادەن، من ئەڤە ب دەستێ خۆ بۆ تە ڕێکخست -->
-    <div class="match-card">
-        <span class="team-name">دهۆک</span>
-        <span class="vs">VS</span>
-        <span class="team-name">یارییا بهێت</span>
+<div class="container">
+    
+    <div class="section-box">
+        <span class="section-title">یاریێن بهێت یێن دهۆکێ (ستێرێن عیراقێ)</span>
+        <a href="https://www.google.com/search?q=Duhok+SC+matches" target="_blank" class="live-btn">📅 تەماشەکردنا خشتەیێ یاریێن دهۆکێ</a>
+        <iframe src="https://www.scoreaxis.com/widget/next-matches/854?autoHeight=1&theme=dark"></iframe>
     </div>
-    <p style="font-size: 12px; opacity: 0.7;">بۆ دیتنا خشتەیێ گشتی یێ خولێ، تەماشەی خوارێ بکە:</p>
-    <iframe src="https://www.scoreaxis.com/widget/next-matches/854?autoHeight=1&theme=dark"></iframe>
+
+    <div class="section-box">
+        <span class="section-title">خولا نایابا کوردستانێ</span>
+        <a href="https://www.sofascore.com/tournament/football/iraq/kurdistan-premier-league/15383" target="_blank" class="live-btn">☀️ ئەنجامێن خولا کوردستانێ (Live)</a>
+        <p style="font-size: 12px; opacity: 0.7;">ئەگەر خشتەیێ خوارێ دیار نەبوو، کلیکێ ل سەر دوگمەیا شین بکە.</p>
+        <iframe src="https://ls.betradar.com/ls/widgets/?/bet365/en/page/widgets_lmts#widget/matchtoday"></iframe>
+    </div>
+
 </div>
 
-<div class="section">
-    <div class="section-title">خولا نایابا کوردستانێ</div>
-    <!-- ئەڤ وێجێتە یاریێن کوردستانێ نیشان ددەت ئەگەر هەبن -->
-    <iframe src="https://ls.betradar.com/ls/widgets/?/bet365/en/page/widgets_lmts#widget/matchtoday" style="height: 600px;"></iframe>
-</div>
+<footer style="padding: 20px; opacity: 0.5; font-size: 11px;">
+    Official Project for duhok2008.sc
+</footer>
 
 </body>
 </html>
