@@ -3,37 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSC SCORES</title>
+    <title>Duhok Sport Club</title>
     <style>
         body { 
             background-color: #004a99; 
             color: white; 
-            font-family: sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center; 
             margin: 0;
-            background-image: linear-gradient(180deg, #004a99 0%, #ffcc00 100%);
+            /* لێرە وێنەیەکێ جانی یێ ئاڵایێ دهۆکێ وەک باکگراوند هەیە */
+            background-image: linear-gradient(rgba(0, 74, 153, 0.8), rgba(255, 204, 0, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             min-height: 100vh;
         }
         header { 
-            background-color: #ffcc00; 
-            padding: 15px; 
-            border-bottom: 4px solid #004a99; 
+            background-color: rgba(255, 204, 0, 0.9); 
+            padding: 20px; 
+            border-bottom: 5px solid #004a99;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        header h1 { color: #004a99; margin: 0; font-size: 28px; }
-        .widget-container { padding: 10px; }
+        header h1 { 
+            color: #004a99; 
+            margin: 0; 
+            font-size: 32px; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            color: #004a99;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .widget-container { 
+            padding: 15px; 
+            margin: 20px auto;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>DSC SCORES ⚽</h1>
+    <h1>DUHOK SPORT CLUB</h1>
+    <div class="subtitle">duhok2008.sc</div>
 </header>
 
 <div class="widget-container">
-    <!-- ئەڤ لێنکە یێ باوەرپێکرییە و ئەنجامێن یارییان نیشان دەت -->
-    <iframe src="https://www.scoreaxis.com/widget/league-standings/854?autoHeight=1&theme=dark" 
+    <!-- سیستەمێ ئۆتۆماتیکی یێ ئەنجامێن یارییان -->
+    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=light&font=Verdana" 
             width="100%" 
-            height="800" 
+            height="700" 
             frameborder="0">
     </iframe>
 </div>
