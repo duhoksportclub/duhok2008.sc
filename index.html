@@ -3,83 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duhok Sport Club</title>
+    <title>Duhok Sport Club - Kurdistan League</title>
     <style>
-        /* دیزاینەکێ مۆدێرن و تۆخ */
         body { 
             background-color: #050a14; 
             color: white; 
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: radial-gradient(circle at top, #004a99 0%, #050a14 70%);
+            background-image: radial-gradient(circle at top, #004a99 0%, #050a14 90%);
             min-height: 100vh;
         }
         header { 
-            padding: 30px 10px;
+            padding: 25px 10px;
             text-align: center;
+            background: rgba(255, 204, 0, 0.1);
+            border-bottom: 3px solid #ffcc00;
+        }
+        .flag-icon {
+            width: 70px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
         .logo-text {
-            font-size: 35px;
+            font-size: 26px;
             font-weight: 900;
-            color: #ffcc00; /* زەرا فەرمی */
-            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            color: #ffcc00;
             margin: 0;
-            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .tagline {
-            color: #ffffff;
-            font-size: 14px;
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-        .main-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            margin: 10px;
-            padding: 15px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .btn {
+        .league-title {
             background: #ffcc00;
             color: #050a14;
-            padding: 12px 20px;
-            border-radius: 15px;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
             font-weight: bold;
-            text-decoration: none;
+            margin-top: 10px;
             font-size: 14px;
-            flex: 1;
-            max-width: 150px;
+        }
+        .main-content {
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+        }
+        .info-bar {
+            background: #004a99;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="logo-text">DUHOK SC</h1>
-    <div class="tagline">duhok2008.sc • ئەنجامێن ڕاستەوخۆ</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png" class="flag-icon">
+    <h1 class="logo-text">DUHOK SPORT CLUB</h1>
+    <div class="league-title">خولا نایابا کوردستانێ ☀️</div>
 </header>
 
-<div class="main-card">
-    <div class="btn-container">
-        <div class="btn">خولا عیراقێ 🇮🇶</div>
-        <div class="btn">یاریێن ئەڤڕۆ ⚽</div>
+<div class="main-content">
+    <div class="card">
+        <div class="info-bar">ئەنجامێن ڕاستەوخۆ و ڕێزبەندی</div>
+        <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=light&instaupdate=1" 
+                width="100%" 
+                height="750" 
+                frameborder="0">
+        </iframe>
     </div>
-    
-    <iframe src="https://www.scoreaxis.com/widget/live-score?autoHeight=1&theme=dark" 
-            width="100%" 
-            height="650" 
-            frameborder="0"
-            style="border-radius: 15px;">
-    </iframe>
 </div>
 
 </body>
