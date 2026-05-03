@@ -26,15 +26,14 @@
         .header { 
             width: 100%; 
             background-color: var(--dsc-blue); 
-            padding: 30px 0; 
+            padding: 25px 0; 
             text-align: center; 
             border-bottom: 4px solid var(--dsc-yellow); 
         }
         .header h1 { 
             margin: 0; 
-            font-size: 28px; 
+            font-size: 26px; 
             color: var(--dsc-yellow); 
-            letter-spacing: 2px; 
             text-transform: uppercase;
         }
         .container { 
@@ -42,77 +41,59 @@
             max-width: 450px; 
             padding: 20px; 
         }
-        .league-title { 
+        .section-title { 
             text-align: center; 
-            font-size: 18px; 
-            margin-bottom: 25px; 
-            border: 1px solid var(--dsc-yellow); 
-            padding: 10px; 
-            border-radius: 10px; 
+            font-size: 16px; 
+            margin: 20px 0; 
+            background: var(--dsc-blue);
+            color: var(--dsc-yellow);
+            padding: 8px; 
+            border-radius: 5px; 
+            font-weight: bold;
         }
         .match-card { 
             background: #101826; 
-            border-radius: 20px; 
-            padding: 25px 20px; 
-            margin-bottom: 20px; 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-bottom: 15px; 
             border: 1px solid #1f2633; 
-            position: relative; 
             text-align: center; 
         }
-        .match-card::after { 
-            content: ""; 
-            position: absolute; 
-            top: 15%; 
-            right: 0; 
-            width: 4px; 
-            height: 70%; 
-            background: var(--dsc-yellow); 
-            border-radius: 2px; 
+        .old-match {
+            opacity: 0.7; /* بۆ هندێ دیار بیت یارییێن کەڤن یێن جودان */
+            border-right: 4px solid #555;
         }
         .match-header { 
             display: flex; 
             justify-content: space-between; 
-            font-size: 14px; 
+            font-size: 12px; 
             color: var(--dsc-yellow); 
-            margin-bottom: 15px; 
-            font-weight: bold; 
+            margin-bottom: 10px; 
         }
         .teams { 
-            font-size: 20px; 
+            font-size: 18px; 
             font-weight: bold; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            gap: 10px; 
+            margin: 10px 0;
         }
-        .vs-text { 
-            color: var(--dsc-yellow); 
-            font-size: 16px; 
+        .result {
+            font-size: 22px;
+            color: var(--dsc-yellow);
+            background: rgba(255, 204, 0, 0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 10px;
+            margin: 5px 0;
         }
         .stadium { 
-            margin-top: 12px; 
-            font-size: 13px; 
+            font-size: 12px; 
             color: #888; 
-            letter-spacing: 1px; 
-        }
-        .day-tag {
-            display: inline-block;
-            background: var(--dsc-blue);
-            color: var(--dsc-yellow);
-            padding: 2px 8px;
-            border-radius: 5px;
-            font-size: 12px;
-            margin-bottom: 10px;
         }
         .footer { 
             margin-top: 30px; 
             text-align: center; 
             padding-bottom: 40px; 
-        }
-        .official-tag { 
-            color: var(--dsc-yellow); 
-            font-size: 15px; 
-            font-weight: bold; 
+            font-size: 12px;
+            color: #555;
         }
     </style>
 </head>
@@ -123,100 +104,54 @@
 </div>
 
 <div class="container">
-    <div class="league-title">IRAQ STARS LEAGUE</div>
+    
+    <!-- یارییێن بهێت -->
+    <div class="section-title">UPCOMING MATCHES / یارییێن بهێت</div>
 
-    <!-- DUHOK VS NAFT MISSAN -->
     <div class="match-card">
         <div class="match-header">
             <span>2026/05/05 | 5:30 PM</span>
             <span>ROUND (33)</span>
         </div>
-        <div class="day-tag">TUESDAY / سێشەمبە</div>
-        <div class="teams">
-            <span>NAFT MISSAN</span>
-            <span class="vs-text">VS</span>
-            <span>DUHOK</span>
-        </div>
+        <div class="teams">NAFT MISSAN VS DUHOK</div>
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <!-- DUHOK VS AL QASIM -->
     <div class="match-card">
         <div class="match-header">
             <span>2026/05/10 | 5:30 PM</span>
             <span>ROUND (34)</span>
         </div>
-        <div class="day-tag">SUNDAY / ئێک شەمبە</div>
-        <div class="teams">
-            <span>AL QASIM</span>
-            <span class="vs-text">VS</span>
-            <span>DUHOK</span>
-        </div>
+        <div class="teams">AL QASIM VS DUHOK</div>
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <!-- DUHOK VS MOSUL -->
-    <div class="match-card">
-        <div class="match-header">
-            <span>2026/--/-- | --:--</span>
-            <span>MATCH DAY</span>
-        </div>
-        <div class="day-tag">-------</div>
-        <div class="teams">
-            <span>AL-MOSUL</span>
-            <span class="vs-text">VS</span>
-            <span>DUHOK</span>
-        </div>
-        <div class="stadium">📍 MOSUL STADIUM</div>
-    </div>
 
-    <!-- DUHOK VS AL-NAFT -->
-    <div class="match-card">
-        <div class="match-header">
-            <span>2026/--/-- | --:--</span>
-            <span>MATCH DAY</span>
-        </div>
-        <div class="day-tag">-------</div>
-        <div class="teams">
-            <span>AL-NAFT</span>
-            <span class="vs-text">VS</span>
-            <span>DUHOK</span>
-        </div>
-        <div class="stadium">📍 AL-NAFT STADIUM</div>
-    </div>
+    <!-- یارییێن کەڤن -->
+    <div class="section-title">OLD MATCHES / یارییێن کەڤن (2025-2026)</div>
 
-    <!-- DUHOK VS AL-KAHRABAA -->
-    <div class="match-card">
+    <div class="match-card old-match">
         <div class="match-header">
-            <span>2026/--/-- | --:--</span>
-            <span>MATCH DAY</span>
+            <span>2026/04/28</span>
+            <span>FINISHED</span>
         </div>
-        <div class="day-tag">-------</div>
-        <div class="teams">
-            <span>DUHOK</span>
-            <span class="vs-text">VS</span>
-            <span>AL-KAHRABAA</span>
-        </div>
+        <div class="teams">DUHOK VS ZAKHO</div>
+        <div class="result">1 - 0</div>
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <!-- DUHOK VS DIYALA -->
-    <div class="match-card">
+    <div class="match-card old-match">
         <div class="match-header">
-            <span>2026/--/-- | --:--</span>
-            <span>MATCH DAY</span>
+            <span>2026/04/20</span>
+            <span>FINISHED</span>
         </div>
-        <div class="day-tag">-------</div>
-        <div class="teams">
-            <span>DIYALA</span>
-            <span class="vs-text">VS</span>
-            <span>DUHOK</span>
-        </div>
-        <div class="stadium">📍 DIYALA STADIUM</div>
+        <div class="teams">ERBIL VS DUHOK</div>
+        <div class="result">0 - 0</div>
+        <div class="stadium">📍 ERBIL STADIUM</div>
     </div>
 
     <div class="footer">
-        <div class="official-tag">OFFICIAL PRODUCT</div>
+        SEASON 2025-2026 | OFFICIAL PRODUCT
     </div>
 </div>
 
