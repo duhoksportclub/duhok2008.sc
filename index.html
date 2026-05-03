@@ -7,104 +7,59 @@
         :root { --dsc-blue: #003366; --dsc-yellow: #ffcc00; --dsc-dark: #050a14; }
         body { background-color: var(--dsc-dark); color: white; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
         
-        .header { width: 100%; background-color: var(--dsc-blue); padding: 15px 0; text-align: center; border-bottom: 4px solid var(--dsc-yellow); }
-        .header h2 { margin: 0; color: var(--dsc-yellow); font-size: 20px; }
+        .header { width: 100%; background-color: var(--dsc-blue); padding: 20px 0; text-align: center; border-bottom: 4px solid var(--dsc-yellow); }
+        .header h2 { margin: 0; color: var(--dsc-yellow); font-size: 22px; font-weight: bold; }
 
-        .nav-tabs { display: flex; width: 100%; max-width: 450px; background: #0a111f; border-bottom: 1px solid #1f2633; }
-        .nav-btn { flex: 1; padding: 12px; border: none; background: none; color: #888; font-weight: bold; cursor: pointer; font-size: 11px; }
-        .nav-btn.active { color: var(--dsc-yellow); border-bottom: 3px solid var(--dsc-yellow); }
-
-        .container { width: 100%; max-width: 450px; padding: 15px; box-sizing: border-box; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .section-title { background: #0a111f; color: var(--dsc-yellow); text-align: center; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-weight: bold; border: 1px solid #1f2633; font-size: 14px; }
+        .container { width: 100%; max-width: 450px; padding: 20px; box-sizing: border-box; }
         
-        .match-card { background: #101826; border-radius: 15px; padding: 15px; margin-bottom: 12px; border: 1px solid #1f2633; }
-        .match-header { display: flex; justify-content: space-between; font-size: 10px; color: var(--dsc-yellow); margin-bottom: 15px; font-weight: bold; }
-        .teams-row { display: flex; align-items: center; justify-content: center; gap: 5px; }
-        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 14px; width: 40px; text-align: center; }
-        .team-box { display: flex; align-items: center; flex: 1; gap: 10px; }
+        .section-title { background: #0a111f; color: var(--dsc-yellow); text-align: center; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; border: 1px solid #1f2633; font-size: 14px; letter-spacing: 1px; }
+        
+        .match-card { background: #101826; border-radius: 15px; padding: 20px; margin-bottom: 15px; border: 1px solid #1f2633; }
+        .match-header { display: flex; justify-content: space-between; font-size: 11px; color: var(--dsc-yellow); margin-bottom: 15px; font-weight: bold; }
+        
+        .teams-row { display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 16px; width: 40px; text-align: center; }
+        .team-box { display: flex; align-items: center; flex: 1; gap: 12px; }
         .team-box.left { justify-content: flex-end; }
         .team-box.right { justify-content: flex-start; flex-direction: row-reverse; }
-        .team-box span { font-weight: bold; font-size: 13px; }
-        .team-logo { width: 35px; height: 35px; border-radius: 50%; background: #fff; padding: 2px; }
-        .stadium-info { font-size: 10px; color: #888; margin-top: 12px; text-align: center; }
-
-        .league-table { width: 100%; border-collapse: collapse; background: #101826; border-radius: 10px; overflow: hidden; }
-        .league-table th, .league-table td { padding: 12px; text-align: center; border-bottom: 1px solid #1f2633; font-size: 12px; }
-        .league-table th { background: #0a111f; color: var(--dsc-yellow); }
-        .highlight { background: rgba(255, 204, 0, 0.1); color: var(--dsc-yellow); font-weight: bold; }
-
-        .player-card { background: #101826; border-radius: 8px; padding: 12px; margin-bottom: 8px; display: flex; align-items: center; gap: 15px; border-left: 4px solid var(--dsc-yellow); }
-        .coach-card { border-left: 4px solid #ffffff; background: #1a2536; }
-        .player-info { flex: 1; }
-        .player-name { font-weight: bold; font-size: 14px; }
-        .player-pos { font-size: 10px; color: #888; }
+        .team-box span { font-weight: bold; font-size: 14px; }
+        .team-logo { width: 45px; height: 45px; border-radius: 50%; background: #fff; padding: 2px; }
+        
+        .stadium-info { font-size: 11px; color: #888; margin-top: 15px; text-align: center; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="header"><h2>DUHOK SPORT CLUB</h2></div>
-
-<div class="nav-tabs">
-    <button class="nav-btn active" onclick="showTab('matches')">MATCHES</button>
-    <button class="nav-btn" onclick="showTab('squad')">SQUAD</button>
-    <button class="nav-btn" onclick="showTab('table')">TABLE</button>
+<div class="header">
+    <h2>DUHOK SPORT CLUB</h2>
 </div>
 
 <div class="container">
+    <div class="section-title">UPCOMING MATCHES</div>
     
-    <div id="matches" class="tab-content active">
-        <div class="section-title">UPCOMING MATCHES</div>
-        
-        <div class="match-card">
-            <div class="match-header"><span>ROUND (33)</span><span>2026/05/05</span></div>
-            <div class="teams-row">
-                <div class="team-box left"><span>NAFT MISSAN</span><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo"></div>
-                <div class="vs-text">VS</div>
-                <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-            </div>
-            <div class="stadium-info">Maimouna Stadium 📍</div>
+    <!-- Match 1 -->
+    <div class="match-card">
+        <div class="match-header"><span>ROUND (33)</span><span>2026/05/05</span></div>
+        <div class="teams-row">
+            <div class="team-box left"><span>NAFT MISSAN</span><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo"></div>
+            <div class="vs-text">VS</div>
+            <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
         </div>
+        <div class="stadium-info">Duhok Stadium 📍</div>
     </div>
 
-    <div id="squad" class="tab-content">
-        <div class="section-title">TEAM STAFF</div>
-        <div class="player-card coach-card">
-            <div class="player-info">
-                <div class="player-name">AHMAD KHALAF</div>
-                <div class="player-pos">COACH</div>
-            </div>
+    <!-- Match 2 -->
+    <div class="match-card">
+        <div class="match-header"><span>ROUND (34)</span><span>2026/05/10</span></div>
+        <div class="teams-row">
+            <div class="team-box left"><span>AL QASIM</span><img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo"></div>
+            <div class="vs-text">VS</div>
+            <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
         </div>
-        <div class="section-title">PLAYERS LIST</div>
-        <div class="player-card"><div class="player-info"><div class="player-name">MOHAMED SALIH</div><div class="player-pos">GK</div></div></div>
-        <div class="player-card"><div class="player-info"><div class="player-name">REWAN AMIN</div><div class="player-pos">MF</div></div></div>
-        <div class="player-card"><div class="player-info"><div class="player-name">YANNICK ZAKRI</div><div class="player-pos">FW</div></div></div>
-    </div>
-
-    <div id="table" class="tab-content">
-        <div class="section-title">LEAGUE TABLE</div>
-        <table class="league-table">
-            <thead><tr><th>#</th><th>TEAM</th><th>P</th><th>PTS</th></tr></thead>
-            <tbody>
-                <tr><td>1</td><td>Al-Shorta</td><td>32</td><td>70</td></tr>
-                <tr class="highlight"><td>6</td><td>Duhok</td><td>32</td><td>48</td></tr>
-                <tr><td>7</td><td>Zakho</td><td>32</td><td>46</td></tr>
-            </tbody>
-        </table>
+        <div class="stadium-info">Duhok Stadium 📍</div>
     </div>
 
 </div>
-
-<script>
-    function showTab(tabId) {
-        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
-</script>
 
 </body>
 </html>
