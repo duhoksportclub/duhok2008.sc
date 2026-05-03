@@ -67,10 +67,13 @@
         
         .teams-row { display: flex; align-items: center; justify-content: center; margin: 10px 0; gap: 5px; }
         
-        /* رێکخستنا لۆگۆ ل پێشیا ناڤی */
+        /* دیزاینێ تەواو بەروڤاژی (Full Back-to-Back Alignment) */
         .team-box { display: flex; align-items: center; gap: 8px; font-weight: bold; flex: 1; font-size: 14px; }
-        .right-side { justify-content: flex-end; } 
-        .left-side { justify-content: flex-start; } 
+        
+        /* رێزبەندی بۆ لایێ ڕاستێ (دێ کەڤیتە چەپێ) */
+        .reversed-right { flex-direction: row-reverse; justify-content: flex-end; text-align: right; } 
+        /* رێزبەندی بۆ لایێ چەپێ (دێ کەڤیتە ڕاستێ) */
+        .reversed-left { flex-direction: row; justify-content: flex-start; text-align: left; } 
 
         .team-logo { width: 32px; height: 32px; border-radius: 50%; background: #fff; object-fit: contain; padding: 2px; }
         .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 12px; min-width: 30px; }
@@ -94,16 +97,16 @@
     
     <div id="matchesTab" class="tab-content active">
         
-        <!-- 1. NAFT MISSAN (Home: Duhok - Duhok on Right) -->
+        <!-- 1. NAFT MISSAN (Reversed Alignment) -->
         <div class="match-card">
             <div class="match-header"><span>2026/05/05 | 5:30 PM</span><span>ROUND (33)</span></div>
             <div class="teams-row">
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo">
+                <div class="team-box reversed-right">
                     <span>NAFT MISSAN</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo">
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box left-side">
+                <div class="team-box reversed-left">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                     <span>DUHOK</span>
                 </div>
@@ -111,16 +114,16 @@
             <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
 
-        <!-- 2. AL QASIM (Home: Duhok - Duhok on Right) -->
+        <!-- 2. AL QASIM (Reversed Alignment) -->
         <div class="match-card">
             <div class="match-header"><span>2026/05/10 | 5:30 PM</span><span>ROUND (34)</span></div>
             <div class="teams-row">
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo">
+                <div class="team-box reversed-right">
                     <span>AL QASIM</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo">
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box left-side">
+                <div class="team-box reversed-left">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                     <span>DUHOK</span>
                 </div>
@@ -128,16 +131,16 @@
             <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
 
-        <!-- 3. MOSUL (Home: Mosul - Duhok on Left) -->
+        <!-- 3. MOSUL (Reversed Alignment) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                <div class="team-box reversed-right">
                     <span>DUHOK</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box left-side">
+                <div class="team-box reversed-left">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFMc2v_NjYtgZ8Lpe4axGRz8hee5T_UNCkrU43KJHaA&s" class="team-logo">
                     <span>AL-MOSUL</span>
                 </div>
@@ -145,16 +148,16 @@
             <div class="stadium">📍 MOSUL STADIUM</div>
         </div>
 
-        <!-- 4. AL-NAFT (Home: Al-Naft - Duhok on Left) -->
+        <!-- 4. AL-NAFT (Reversed Alignment) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                <div class="team-box reversed-right">
                     <span>DUHOK</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box left-side">
+                <div class="team-box reversed-left">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhsMqwRZlrZYEV12jliVLEi9jb9lQ1ticIWj-6u318Q&s=10" class="team-logo">
                     <span>AL-NAFT</span>
                 </div>
@@ -162,16 +165,16 @@
             <div class="stadium">📍 AL-NAFT STADIUM</div>
         </div>
 
-        <!-- 5. AL-KAHRABAA (Home: Duhok - Duhok on Right) -->
+        <!-- 5. AL-KAHRABAA (Reversed Alignment) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYP_b2BJfRfs5EQcQvveP7THxzWuZ3Sjxg-8TGkRK1w&s" class="team-logo">
+                <div class="team-box reversed-right">
                     <span>AL-KAHRABAA</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYP_b2BJfRfs5EQcQvveP7THxzWuZ3Sjxg-8TGkRK1w&s" class="team-logo">
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box left-side">
+                <div class="team-box reversed-left">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                     <span>DUHOK</span>
                 </div>
@@ -179,16 +182,16 @@
             <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
 
-        <!-- 6. DIYALA (Home: Duhok - Duhok on Right) -->
+        <!-- 6. DIYALA (Reversed Alignment) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduEgn730fBWI0TpAb8JoNrckz2OtSvOvTb_-QYsdJLg&s=10" class="team-logo">
+                <div class="team-box reversed-right">
                     <span>DIYALA</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduEgn730fBWI0TpAb8JoNrckz2OtSvOvTb_-QYsdJLg&s=10" class="team-logo">
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box left-side">
+                <div class="team-box reversed-left">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                     <span>DUHOK</span>
                 </div>
@@ -198,6 +201,7 @@
 
     </div>
 
+    <!-- SQUAD TAB -->
     <div id="squadTab" class="tab-content">
         <div style="text-align: center; margin-top: 20px;">
             <img src="https://i.ibb.co/L6vVshm/Ahmed-Khalaf.png" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--dsc-yellow);">
