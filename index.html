@@ -32,32 +32,7 @@
         }
         .header h1 { margin: 0; font-size: 22px; color: var(--dsc-yellow); }
 
-        .nav-tabs {
-            display: flex;
-            width: 100%;
-            max-width: 450px;
-            background: #101826;
-            margin-top: 2px;
-        }
-        .nav-btn {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            background: none;
-            color: #888;
-            font-weight: bold;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: 0.3s;
-        }
-        .nav-btn.active {
-            color: var(--dsc-yellow);
-            border-bottom: 3px solid var(--dsc-yellow);
-        }
-
         .container { width: 100%; max-width: 450px; padding: 20px; box-sizing: border-box; }
-        .tab-content { display: none; width: 100%; }
-        .tab-content.active { display: block; }
 
         .match-card { 
             background: #101826; border-radius: 15px; padding: 15px; margin-bottom: 12px; 
@@ -65,16 +40,19 @@
         }
         .match-header { display: flex; justify-content: space-between; font-size: 11px; color: var(--dsc-yellow); margin-bottom: 10px;}
         
-        .teams-row { display: flex; align-items: center; justify-content: center; margin: 10px 0; gap: 5px; }
-        .team-box { display: flex; align-items: center; gap: 6px; font-weight: bold; flex: 1; font-size: 13px; }
+        /* ئەڤە VS دکەتە سەنتەر */
+        .teams-row { display: flex; align-items: center; justify-content: center; margin: 10px 0; }
         
-        /* لایێ چەپێ: ناڤ + لۆگۆ */
-        .left-side { justify-content: flex-start; flex-direction: row; } 
-        /* لایێ ڕاستێ: لۆگۆ + ناڤ (نوکە لۆگۆ کەفتە پێش) */
-        .right-side { justify-content: flex-end; flex-direction: row; } 
+        .team-box { display: flex; align-items: center; flex: 1; font-weight: bold; font-size: 13px; }
+        
+        /* لایێ چەپێ: لۆگۆ ل دوور + ناڤ نێزیکی VS */
+        .left-side { justify-content: space-between; flex-direction: row; text-align: left; } 
+        
+        /* لایێ ڕاستێ: ناڤ نێزیکی VS + لۆگۆ ل دوور */
+        .right-side { justify-content: space-between; flex-direction: row-reverse; text-align: right; } 
 
-        .team-logo { width: 32px; height: 32px; border-radius: 50%; background: #fff; object-fit: contain; padding: 2px; flex-shrink: 0; }
-        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 12px; min-width: 30px; }
+        .team-logo { width: 30px; height: 30px; border-radius: 50%; background: #fff; object-fit: contain; padding: 2px; flex-shrink: 0; }
+        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 14px; margin: 0 10px; }
         .stadium { font-size: 10px; color: #555; margin-top: 8px; border-top: 1px solid #1f2633; padding-top: 5px; }
 
         .footer { margin-top: 20px; text-align: center; padding-bottom: 30px; font-size: 12px; color: #444; }
@@ -86,96 +64,63 @@
     <h1>DUHOK SPORT CLUB</h1>
 </div>
 
-<div class="nav-tabs">
-    <button class="nav-btn active" onclick="openTab(event, 'matchesTab')">MATCHES</button>
-    <button class="nav-btn" onclick="openTab(event, 'squadTab')">SQUAD</button>
-</div>
-
 <div class="container">
     
-    <div id="matchesTab" class="tab-content active">
-        
-        <!-- Match 1 -->
-        <div class="match-card">
-            <div class="match-header"><span>2026/05/05 | 5:30 PM</span><span>ROUND (33)</span></div>
-            <div class="teams-row">
-                <div class="team-box left-side">
-                    <span>DUHOK</span>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
-                </div>
-                <span class="vs-text">VS</span>
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo">
-                    <span>NAFT MISSAN</span>
-                </div>
+    <!-- Match 1 -->
+    <div class="match-card">
+        <div class="match-header"><span>2026/05/05 | 5:30 PM</span><span>ROUND (33)</span></div>
+        <div class="teams-row">
+            <div class="team-box left-side">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                <span>DUHOK</span>
             </div>
-            <div class="stadium">📍 DUHOK STADIUM</div>
-        </div>
-
-        <!-- Match 2 -->
-        <div class="match-card">
-            <div class="match-header"><span>2026/05/10 | 5:30 PM</span><span>ROUND (34)</span></div>
-            <div class="teams-row">
-                <div class="team-box left-side">
-                    <span>DUHOK</span>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
-                </div>
-                <span class="vs-text">VS</span>
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo">
-                    <span>AL QASIM</span>
-                </div>
+            <span class="vs-text">VS</span>
+            <div class="team-box right-side">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo">
+                <span>NAFT MISSAN</span>
             </div>
-            <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
-
-        <!-- Match 3 -->
-        <div class="match-card">
-            <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
-            <div class="teams-row">
-                <div class="team-box left-side">
-                    <span>AL-MOSUL</span>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFMc2v_NjYtgZ8Lpe4axGRz8hee5T_UNCkrU43KJHaA&s" class="team-logo">
-                </div>
-                <span class="vs-text">VS</span>
-                <div class="team-box right-side">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
-                    <span>DUHOK</span>
-                </div>
-            </div>
-            <div class="stadium">📍 MOSUL STADIUM</div>
-        </div>
-
+        <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <div id="squadTab" class="tab-content">
-        <div style="text-align: center; margin-top: 20px;">
-            <img src="https://i.ibb.co/L6vVshm/Ahmed-Khalaf.png" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--dsc-yellow);">
-            <h3 style="margin: 10px 0 5px 0;">Ahmed Khalaf</h3>
-            <p style="color: var(--dsc-yellow); margin: 0;">Coach</p>
+    <!-- Match 2 -->
+    <div class="match-card">
+        <div class="match-header"><span>2026/05/10 | 5:30 PM</span><span>ROUND (34)</span></div>
+        <div class="teams-row">
+            <div class="team-box left-side">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                <span>DUHOK</span>
+            </div>
+            <span class="vs-text">VS</span>
+            <div class="team-box right-side">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo">
+                <span>AL QASIM</span>
+            </div>
         </div>
+        <div class="stadium">📍 DUHOK STADIUM</div>
+    </div>
+
+    <!-- Match 3 (Away) -->
+    <div class="match-card">
+        <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
+        <div class="teams-row">
+            <div class="team-box left-side">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFMc2v_NjYtgZ8Lpe4axGRz8hee5T_UNCkrU43KJHaA&s" class="team-logo">
+                <span>AL-MOSUL</span>
+            </div>
+            <span class="vs-text">VS</span>
+            <div class="team-box right-side">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                <span>DUHOK</span>
+            </div>
+        </div>
+        <div class="stadium">📍 MOSUL STADIUM</div>
     </div>
 
     <div class="footer">
         OFFICIAL PRODUCT | TIK: duhok2008.sc
     </div>
 </div>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, navbtn;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        navbtn = document.getElementsByClassName("nav-btn");
-        for (i = 0; i < navbtn.length; i++) {
-            navbtn[i].className = navbtn[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-</script>
 
 </body>
 </html>
