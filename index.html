@@ -14,7 +14,7 @@
         body { 
             background-color: var(--dsc-dark); 
             color: white; 
-            font-family: sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             display: flex; 
             flex-direction: column; 
@@ -57,8 +57,8 @@
             text-align: center; 
         }
         .old-match {
-            opacity: 0.8;
-            border-right: 4px solid #555;
+            opacity: 0.85;
+            border-right: 4px solid #444;
         }
         .match-header { 
             display: flex; 
@@ -75,10 +75,10 @@
             display: inline-block;
             padding: 5px 15px;
             border-radius: 10px;
+            font-weight: bold;
         }
-        .stadium { font-size: 12px; color: #888; }
+        .stadium { font-size: 12px; color: #888; margin-top: 5px; }
         
-        /* ستایلا دوگمێ */
         .toggle-btn {
             background-color: var(--dsc-blue);
             color: var(--dsc-yellow);
@@ -90,15 +90,31 @@
             width: 100%;
             margin: 20px 0;
             font-size: 16px;
+            transition: 0.3s;
         }
+        .toggle-btn:hover { background: #004080; }
         
-        /* ڤەشارتنا پشکا یارییێن کەڤن ب شێوەیەکێ دەستپێکی */
         #oldMatchesSection {
             display: none;
             width: 100%;
         }
 
-        .footer { margin-top: 30px; text-align: center; padding-bottom: 40px; font-size: 12px; color: #555; }
+        .footer { 
+            margin-top: 30px; 
+            text-align: center; 
+            padding-bottom: 40px; 
+        }
+        .official-tag { 
+            color: var(--dsc-yellow); 
+            font-size: 14px; 
+            font-weight: bold; 
+        }
+        .tiktok-id { 
+            display: block; 
+            margin-top: 5px; 
+            font-size: 13px; 
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -121,8 +137,17 @@
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
+    <div class="match-card">
+        <div class="match-header">
+            <span>2026/05/10 | 5:30 PM</span>
+            <span>ROUND (34)</span>
+        </div>
+        <div class="teams">AL QASIM VS DUHOK</div>
+        <div class="stadium">📍 DUHOK STADIUM</div>
+    </div>
+
     <!-- دوگمە بۆ نیشاندانا یارییێن کەڤن -->
-    <button class="toggle-btn" onclick="toggleMatches()">VIEW OLD MATCHES / یارییێن کەڤن</button>
+    <button class="toggle-btn" onclick="toggleMatches()">VIEW RESULTS / ئەنجامێن یارییان</button>
 
     <!-- پشکا ڤەشارتی یا یارییێن کەڤن -->
     <div id="oldMatchesSection">
@@ -141,18 +166,38 @@
             <div class="result">0 - 0</div>
             <div class="stadium">📍 ERBIL STADIUM</div>
         </div>
+
+        <div class="match-card old-match">
+            <div class="match-header"><span>2026/04/12</span><span>FINISHED</span></div>
+            <div class="teams">DUHOK VS AL-TALABA</div>
+            <div class="result">2 - 1</div>
+            <div class="stadium">📍 DUHOK STADIUM</div>
+        </div>
+
+        <div class="match-card old-match">
+            <div class="match-header"><span>2026/04/05</span><span>FINISHED</span></div>
+            <div class="teams">AL-ZAWRAA VS DUHOK</div>
+            <div class="result">1 - 1</div>
+            <div class="stadium">📍 AL-ZAWRAA STADIUM</div>
+        </div>
     </div>
 
-    <div class="footer">OFFICIAL PRODUCT</div>
+    <div class="footer">
+        <div class="official-tag">OFFICIAL PRODUCT</div>
+        <div class="tiktok-id">TIK: duhok2008.sc</div>
+    </div>
 </div>
 
 <script>
     function toggleMatches() {
         var x = document.getElementById("oldMatchesSection");
+        var btn = document.querySelector(".toggle-btn");
         if (x.style.display === "none" || x.style.display === "") {
             x.style.display = "block";
+            btn.innerHTML = "CLOSE / گرتنا لیستێ";
         } else {
             x.style.display = "none";
+            btn.innerHTML = "VIEW RESULTS / ئەنجامێن یارییان";
         }
     }
 </script>
