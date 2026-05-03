@@ -2,9 +2,6 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUHOK SPORT CLUB</title>
     
@@ -60,7 +57,7 @@
             text-align: center; 
         }
         .old-match {
-            opacity: 0.7; /* بۆ هندێ دیار بیت یارییێن کەڤن یێن جودان */
+            opacity: 0.8;
             border-right: 4px solid #555;
         }
         .match-header { 
@@ -70,31 +67,38 @@
             color: var(--dsc-yellow); 
             margin-bottom: 10px; 
         }
-        .teams { 
-            font-size: 18px; 
-            font-weight: bold; 
-            margin: 10px 0;
-        }
+        .teams { font-size: 18px; font-weight: bold; margin: 10px 0; }
         .result {
-            font-size: 22px;
+            font-size: 20px;
             color: var(--dsc-yellow);
             background: rgba(255, 204, 0, 0.1);
             display: inline-block;
             padding: 5px 15px;
             border-radius: 10px;
-            margin: 5px 0;
         }
-        .stadium { 
-            font-size: 12px; 
-            color: #888; 
+        .stadium { font-size: 12px; color: #888; }
+        
+        /* ستایلا دوگمێ */
+        .toggle-btn {
+            background-color: var(--dsc-blue);
+            color: var(--dsc-yellow);
+            border: 2px solid var(--dsc-yellow);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 16px;
         }
-        .footer { 
-            margin-top: 30px; 
-            text-align: center; 
-            padding-bottom: 40px; 
-            font-size: 12px;
-            color: #555;
+        
+        /* ڤەشارتنا پشکا یارییێن کەڤن ب شێوەیەکێ دەستپێکی */
+        #oldMatchesSection {
+            display: none;
+            width: 100%;
         }
+
+        .footer { margin-top: 30px; text-align: center; padding-bottom: 40px; font-size: 12px; color: #555; }
     </style>
 </head>
 <body>
@@ -105,8 +109,8 @@
 
 <div class="container">
     
-    <!-- یارییێن بهێت -->
-    <div class="section-title">UPCOMING MATCHES / یارییێن بهێت</div>
+    <!-- یارییێن نوو -->
+    <div class="section-title">UPCOMING MATCHES</div>
 
     <div class="match-card">
         <div class="match-header">
@@ -117,43 +121,41 @@
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <div class="match-card">
-        <div class="match-header">
-            <span>2026/05/10 | 5:30 PM</span>
-            <span>ROUND (34)</span>
+    <!-- دوگمە بۆ نیشاندانا یارییێن کەڤن -->
+    <button class="toggle-btn" onclick="toggleMatches()">VIEW OLD MATCHES / یارییێن کەڤن</button>
+
+    <!-- پشکا ڤەشارتی یا یارییێن کەڤن -->
+    <div id="oldMatchesSection">
+        <div class="section-title">SEASON 2025-2026</div>
+
+        <div class="match-card old-match">
+            <div class="match-header"><span>2026/04/28</span><span>FINISHED</span></div>
+            <div class="teams">DUHOK VS ZAKHO</div>
+            <div class="result">1 - 0</div>
+            <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
-        <div class="teams">AL QASIM VS DUHOK</div>
-        <div class="stadium">📍 DUHOK STADIUM</div>
-    </div>
 
-
-    <!-- یارییێن کەڤن -->
-    <div class="section-title">OLD MATCHES / یارییێن کەڤن (2025-2026)</div>
-
-    <div class="match-card old-match">
-        <div class="match-header">
-            <span>2026/04/28</span>
-            <span>FINISHED</span>
+        <div class="match-card old-match">
+            <div class="match-header"><span>2026/04/20</span><span>FINISHED</span></div>
+            <div class="teams">ERBIL VS DUHOK</div>
+            <div class="result">0 - 0</div>
+            <div class="stadium">📍 ERBIL STADIUM</div>
         </div>
-        <div class="teams">DUHOK VS ZAKHO</div>
-        <div class="result">1 - 0</div>
-        <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <div class="match-card old-match">
-        <div class="match-header">
-            <span>2026/04/20</span>
-            <span>FINISHED</span>
-        </div>
-        <div class="teams">ERBIL VS DUHOK</div>
-        <div class="result">0 - 0</div>
-        <div class="stadium">📍 ERBIL STADIUM</div>
-    </div>
-
-    <div class="footer">
-        SEASON 2025-2026 | OFFICIAL PRODUCT
-    </div>
+    <div class="footer">OFFICIAL PRODUCT</div>
 </div>
+
+<script>
+    function toggleMatches() {
+        var x = document.getElementById("oldMatchesSection");
+        if (x.style.display === "none" || x.style.display === "") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
