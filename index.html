@@ -6,84 +6,86 @@
     <style>
         :root { --dsc-blue: #003366; --dsc-yellow: #ffcc00; --dsc-dark: #050a14; }
         body { background-color: var(--dsc-dark); color: white; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        
         .header { width: 100%; background-color: var(--dsc-blue); padding: 15px 0; text-align: center; border-bottom: 4px solid var(--dsc-yellow); }
-        .container { width: 100%; max-width: 450px; padding: 15px; }
+        
+        /* بوتۆنێن سەرەکی */
+        .nav-tabs { display: flex; width: 100%; max-width: 450px; background: #101826; border-bottom: 1px solid #1f2633; }
+        .nav-btn { flex: 1; padding: 12px; border: none; background: none; color: #888; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 12px; }
+        .nav-btn.active { color: var(--dsc-yellow); border-bottom: 3px solid var(--dsc-yellow); }
+
+        .container { width: 100%; max-width: 450px; padding: 15px; box-sizing: border-box; }
         .match-card { background: #101826; border-radius: 12px; padding: 12px; margin-bottom: 10px; border: 1px solid #1f2633; }
         .match-header { display: flex; justify-content: space-between; font-size: 10px; color: var(--dsc-yellow); margin-bottom: 8px; }
         
-        .teams-row { display: flex; align-items: center; justify-content: center; }
-        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 16px; width: 50px; text-align: center; flex-shrink: 0; }
+        .teams-row { display: flex; align-items: center; justify-content: center; gap: 2px; }
+        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 14px; width: 40px; text-align: center; }
         
-        .team { display: flex; align-items: center; flex: 1; }
-        .team.left { justify-content: space-between; flex-direction: row; }
-        .team.right { justify-content: space-between; flex-direction: row-reverse; }
+        .team-box { display: flex; align-items: center; flex: 1; gap: 6px; }
+        .team-box.left { justify-content: flex-end; }
+        .team-box.right { justify-content: flex-start; flex-direction: row-reverse; }
 
-        .team span { font-weight: bold; font-size: 12px; white-space: nowrap; }
-        .team-logo { width: 30px; height: 30px; border-radius: 50%; background: #fff; padding: 2px; flex-shrink: 0; }
+        .team-box span { font-weight: bold; font-size: 12px; white-space: nowrap; }
+        .team-logo { width: 28px; height: 28px; border-radius: 50%; background: #fff; padding: 2px; flex-shrink: 0; }
         
-        .stadium { font-size: 10px; color: #666; margin-top: 8px; text-align: center; }
+        .stadium { font-size: 10px; color: #666; margin-top: 8px; text-align: center; border-top: 1px solid #1f2633; padding-top: 5px; }
     </style>
 </head>
 <body>
 
 <div class="header"><h2>DUHOK SPORT CLUB</h2></div>
 
+<div class="nav-tabs">
+    <button class="nav-btn active">MATCHES</button>
+    <button class="nav-btn">SQUAD</button>
+    <button class="nav-btn">TABLE</button>
+</div>
+
 <div class="container">
-    <!-- 1. DUHOK vs NAFT MISSAN -->
+    <!-- Match 1: Naft Missan -->
     <div class="match-card">
         <div class="match-header"><span>2026/05/05 | 5:30 PM</span><span>ROUND (33)</span></div>
         <div class="teams-row">
-            <div class="team left"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"><span>DUHOK</span></div>
+            <div class="team-box left"><span>DUHOK</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"></div>
             <div class="vs-text">VS</div>
-            <div class="team right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo"><span>NAFT MISSAN</span></div>
+            <div class="team-box right"><span>NAFT MISSAN</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo"></div>
         </div>
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <!-- 2. DUHOK vs AL QASIM -->
+    <!-- Match 2: Al Qasim -->
     <div class="match-card">
         <div class="match-header"><span>2026/05/10 | 5:30 PM</span><span>ROUND (34)</span></div>
         <div class="teams-row">
-            <div class="team left"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"><span>DUHOK</span></div>
+            <div class="team-box left"><span>DUHOK</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"></div>
             <div class="vs-text">VS</div>
-            <div class="team right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo"><span>AL QASIM</span></div>
+            <div class="team-box right"><span>AL QASIM</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo"></div>
         </div>
         <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
 
-    <!-- 3. AL-MOSUL vs DUHOK -->
+    <!-- Match 3: Mosul -->
     <div class="match-card">
         <div class="match-header"><span>2026/--/--</span><span>PENDING</span></div>
         <div class="teams-row">
-            <div class="team left"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFMc2v_NjYtgZ8Lpe4axGRz8hee5T_UNCkrU43KJHaA&s" class="team-logo"><span>AL-MOSUL</span></div>
+            <div class="team-box left"><span>AL-MOSUL</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFMc2v_NjYtgZ8Lpe4axGRz8hee5T_UNCkrU43KJHaA&s" class="team-logo"></div>
             <div class="vs-text">VS</div>
-            <div class="team right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"><span>DUHOK</span></div>
+            <div class="team-box right"><span>DUHOK</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"></div>
         </div>
         <div class="stadium">📍 MOSUL STADIUM</div>
     </div>
 
-    <!-- 4. AL-NAFT vs DUHOK -->
+    <!-- Match 4: Al-Naft -->
     <div class="match-card">
         <div class="match-header"><span>2026/--/--</span><span>PENDING</span></div>
         <div class="teams-row">
-            <div class="team left"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhsMqwRZlrZYEV12jliVLEi9jb9lQ1ticIWj-6u318Q&s=10" class="team-logo"><span>AL-NAFT</span></div>
+            <div class="team-box left"><span>AL-NAFT</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhsMqwRZlrZYEV12jliVLEi9jb9lQ1ticIWj-6u318Q&s=10" class="team-logo"></div>
             <div class="vs-text">VS</div>
-            <div class="team right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"><span>DUHOK</span></div>
+            <div class="team-box right"><span>DUHOK</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"></div>
         </div>
         <div class="stadium">📍 AL-NAFT STADIUM</div>
     </div>
-
-    <!-- 5. DUHOK vs AL-KAHRABAA -->
-    <div class="match-card">
-        <div class="match-header"><span>2026/--/--</span><span>PENDING</span></div>
-        <div class="teams-row">
-            <div class="team left"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo"><span>DUHOK</span></div>
-            <div class="vs-text">VS</div>
-            <div class="team right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYP_b2BJfRfs5EQcQvveP7THxzWuZ3Sjxg-8TGkRK1w&s" class="team-logo"><span>AL-KAHRABAA</span></div>
-        </div>
-        <div class="stadium">📍 DUHOK STADIUM</div>
-    </div>
-
 </div>
+
 </body>
 </html>
