@@ -2,123 +2,87 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUHOK SPORT CLUB</title>
+    
     <style>
-        :root { --dsc-blue: #003366; --dsc-yellow: #ffcc00; --dsc-dark: #050a14; }
-        body { background-color: var(--dsc-dark); color: white; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        
-        /* Header set to match image_71.png layout */
-        .header { width: 100%; background-color: var(--dsc-blue); padding: 20px 0; text-align: center; border-bottom: 4px solid var(--dsc-yellow); }
-        .header-content { display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .header-logo { width: 40px; height: 40px; }
-        .header h2 { margin: 0; color: var(--dsc-yellow); font-size: 22px; font-weight: bold; }
-
-        .nav-tabs { display: flex; width: 100%; max-width: 450px; background: #0a111f; border-bottom: 1px solid #1f2633; }
-        .nav-btn { flex: 1; padding: 12px; border: none; background: none; color: #888; font-weight: bold; cursor: pointer; font-size: 11px; text-transform: uppercase; }
-        .nav-btn.active { color: var(--dsc-yellow); border-bottom: 3px solid var(--dsc-yellow); }
-
-        .container { width: 100%; max-width: 450px; padding: 15px; box-sizing: border-box; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .section-title { background: #0a111f; color: var(--dsc-yellow); text-align: center; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: bold; border: 1px solid #1f2633; font-size: 14px; letter-spacing: 1px; }
-        
-        .match-card { background: #101826; border-radius: 15px; padding: 15px; margin-bottom: 12px; border: 1px solid #1f2633; position: relative; }
-        .match-header { display: flex; justify-content: space-between; font-size: 10px; color: var(--dsc-yellow); margin-bottom: 15px; font-weight: bold; }
-        .day-info { text-align: center; font-size: 9px; color: #666; margin-top: -10px; margin-bottom: 10px; display: block; }
-        
-        .teams-row { display: flex; align-items: center; justify-content: center; gap: 5px; }
-        .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 14px; width: 40px; text-align: center; }
-        .team-box { display: flex; align-items: center; flex: 1; gap: 10px; }
-        .team-box.left { justify-content: flex-end; }
-        .team-box.right { justify-content: flex-start; flex-direction: row-reverse; }
-        .team-box span { font-weight: bold; font-size: 13px; text-align: center; }
-        .team-logo { width: 45px; height: 45px; border-radius: 50%; background: #fff; padding: 2px; object-fit: contain; }
-        
-        .stadium-info { font-size: 10px; color: #888; margin-top: 12px; text-align: center; text-transform: uppercase; }
-
-        .update-text { text-align: center; color: #666; padding: 40px 0; font-style: italic; font-size: 14px; }
+        :root { 
+            --dsc-blue: #003366; 
+            --dsc-yellow: #ffcc00; 
+            --dsc-dark: #050a14; 
+        }
+        body { 
+            background-color: var(--dsc-dark); 
+            color: white; 
+            font-family: sans-serif; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh;
+        }
+        .header { 
+            width: 100%; 
+            background-color: var(--dsc-blue); 
+            padding: 30px 0; 
+            text-align: center; 
+            border-bottom: 4px solid var(--dsc-yellow); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 28px; 
+            color: var(--dsc-yellow); 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+        }
+        .container { 
+            width: 100%; 
+            max-width: 450px; 
+            padding: 40px 20px; 
+            text-align: center;
+        }
+        .welcome-msg {
+            font-size: 20px;
+            color: var(--dsc-yellow);
+            border: 1px solid var(--dsc-yellow);
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 204, 0, 0.05);
+        }
+        .footer { 
+            margin-top: auto; 
+            text-align: center; 
+            padding-bottom: 30px; 
+        }
+        .official-tag { 
+            color: var(--dsc-yellow); 
+            font-size: 14px; 
+            font-weight: bold; 
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="header-content">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="header-logo" alt="Logo">
-        <h2>DUHOK SPORT CLUB</h2>
-    </div>
-</div>
-
-<div class="nav-tabs">
-    <button class="nav-btn active" onclick="showTab('matches')">MATCHES</button>
-    <button class="nav-btn" onclick="showTab('squad')">SQUAD</button>
-    <button class="nav-btn" onclick="showTab('table')">TABLE</button>
+    <h1>DUHOK SPORT CLUB</h1>
 </div>
 
 <div class="container">
-    
-    <div id="matches" class="tab-content active">
-        <div class="section-title">UPCOMING MATCHES</div>
-        
-        <!-- Round 33 -->
-        <div class="match-card">
-            <div class="match-header"><span>ROUND (33)</span><span>PM 5:30 | 2026/05/05</span></div>
-            <span class="day-info">TUESDAY / سێشەمبە</span>
-            <div class="teams-row">
-                <div class="team-box left"><span>NAFT MISSAN</span><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo"></div>
-                <div class="vs-text">VS</div>
-                <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-            </div>
-            <div class="stadium-info">DUHOK STADIUM 📍</div>
-        </div>
-
-        <!-- Round 34 -->
-        <div class="match-card">
-            <div class="match-header"><span>ROUND (34)</span><span>PM 5:30 | 2026/05/10</span></div>
-            <span class="day-info">SUNDAY / ئێک شەمبە</span>
-            <div class="teams-row">
-                <div class="team-box left"><span>AL QASIM</span><img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo"></div>
-                <div class="vs-text">VS</div>
-                <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-            </div>
-            <div class="stadium-info">DUHOK STADIUM 📍</div>
-        </div>
-
-        <!-- Pending -->
-        <div class="match-card">
-            <div class="match-header"><span>PENDING</span><span>--/--/2026</span></div>
-            <span class="day-info">DATE NOT SET / ڕۆژ دیار نینە</span>
-            <div class="teams-row">
-                <div class="team-box left"><span>AL-NAFT</span><img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Al-Naft_SC_logo.png" class="team-logo"></div>
-                <div class="vs-text">VS</div>
-                <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-            </div>
-            <div class="stadium-info">AL-NAFT STADIUM 📍</div>
-        </div>
+    <div class="welcome-msg">
+        ب خێر بێی بۆ سایتێ فەرمی یێ هەواڵێن یانەیا دهۆکێ
+        <br><br>
+        چاوەڕێی یارییێن نوو بن...
     </div>
-
-    <div id="squad" class="tab-content">
-        <div class="section-title">TEAM STAFF</div>
-        <div class="update-text">Soon...</div>
-        <div class="section-title">PLAYERS</div>
-        <div class="update-text">Soon...</div>
-    </div>
-
-    <div id="table" class="tab-content">
-        <div class="section-title">LEAGUE TABLE</div>
-        <div class="update-text">Soon...</div>
-    </div>
-
 </div>
 
-<script>
-    function showTab(tabId) {
-        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
-</script>
+<div class="footer">
+    <div class="official-tag">OFFICIAL PLATFORM</div>
+</div>
 
 </body>
 </html>
