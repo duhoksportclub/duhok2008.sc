@@ -31,8 +31,8 @@
         .team-logo { width: 35px; height: 35px; border-radius: 50%; background: #fff; padding: 2px; }
         .stadium-info { font-size: 10px; color: #888; margin-top: 12px; text-align: center; }
 
-        .league-table { width: 100%; border-collapse: collapse; background: #101826; border-radius: 10px; overflow: hidden; margin-top: 10px; }
-        .league-table th, .league-table td { padding: 12px; text-align: center; border-bottom: 1px solid #1f2633; font-size: 13px; }
+        .league-table { width: 100%; border-collapse: collapse; background: #101826; border-radius: 10px; overflow: hidden; }
+        .league-table th, .league-table td { padding: 12px; text-align: center; border-bottom: 1px solid #1f2633; font-size: 12px; }
         .league-table th { background: #0a111f; color: var(--dsc-yellow); }
         .highlight { background: rgba(255, 204, 0, 0.1); color: var(--dsc-yellow); font-weight: bold; }
 
@@ -58,7 +58,6 @@
     <div id="matches" class="tab-content active">
         <div class="section-title">UPCOMING MATCHES</div>
         
-        <!-- Round 33 -->
         <div class="match-card">
             <div class="match-header"><span>ROUND (33)</span><span>2026/05/05</span></div>
             <div class="teams-row">
@@ -68,60 +67,28 @@
             </div>
             <div class="stadium-info">Maimouna Stadium 📍</div>
         </div>
-
-        <!-- Round 34 -->
-        <div class="match-card">
-            <div class="match-header"><span>ROUND (34)</span><span>2026/05/10</span></div>
-            <div class="teams-row">
-                <div class="team-box left"><span>AL QASIM</span><img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo"></div>
-                <div class="vs-text">VS</div>
-                <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-            </div>
-            <div class="stadium-info">Al-Kifl Stadium 📍</div>
-        </div>
-
-        <!-- Pending Match -->
-        <div class="match-card">
-            <div class="match-header"><span>PENDING</span><span>2026</span></div>
-            <div class="teams-row">
-                <div class="team-box left"><span>AL-NAFT</span><img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Al-Naft_SC_logo.png" class="team-logo"></div>
-                <div class="vs-text">VS</div>
-                <div class="team-box right"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-            </div>
-            <div class="stadium-info">Al-Naft Stadium 📍</div>
-        </div>
     </div>
 
     <div id="squad" class="tab-content">
-        <div class="section-title">TEAM STAFF & SQUAD</div>
+        <div class="section-title">TEAM STAFF</div>
         <div class="player-card coach-card">
             <div class="player-info">
                 <div class="player-name">AHMAD KHALAF</div>
                 <div class="player-pos">COACH</div>
             </div>
         </div>
-        <div class="player-card">
-            <div class="player-info">
-                <div class="player-name">MOHAMED SALIH</div>
-                <div class="player-pos">GOALKEEPER</div>
-            </div>
-        </div>
+        <div class="section-title">PLAYERS LIST</div>
+        <div class="player-card"><div class="player-info"><div class="player-name">MOHAMED SALIH</div><div class="player-pos">GK</div></div></div>
+        <div class="player-card"><div class="player-info"><div class="player-name">REWAN AMIN</div><div class="player-pos">MF</div></div></div>
+        <div class="player-card"><div class="player-info"><div class="player-name">YANNICK ZAKRI</div><div class="player-pos">FW</div></div></div>
     </div>
 
     <div id="table" class="tab-content">
-        <div class="section-title">IRAQI STARS LEAGUE TABLE</div>
+        <div class="section-title">LEAGUE TABLE</div>
         <table class="league-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>TEAM</th>
-                    <th>P</th>
-                    <th>PTS</th>
-                </tr>
-            </thead>
+            <thead><tr><th>#</th><th>TEAM</th><th>P</th><th>PTS</th></tr></thead>
             <tbody>
                 <tr><td>1</td><td>Al-Shorta</td><td>32</td><td>70</td></tr>
-                <tr><td>2</td><td>Al-Quwa Al-Jawiya</td><td>32</td><td>66</td></tr>
                 <tr class="highlight"><td>6</td><td>Duhok</td><td>32</td><td>48</td></tr>
                 <tr><td>7</td><td>Zakho</td><td>32</td><td>46</td></tr>
             </tbody>
