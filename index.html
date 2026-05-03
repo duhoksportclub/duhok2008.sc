@@ -59,6 +59,7 @@
         .tab-content { display: none; width: 100%; }
         .tab-content.active { display: block; }
 
+        /* MATCH CARD */
         .match-card { 
             background: #101826; border-radius: 15px; padding: 15px; margin-bottom: 12px; 
             border: 1px solid #1f2633; text-align: center; 
@@ -68,28 +69,13 @@
         .teams-row { display: flex; align-items: center; justify-content: center; margin: 10px 0; gap: 5px; }
         .team-box { display: flex; align-items: center; gap: 8px; font-weight: bold; flex: 1; font-size: 14px; }
         
-        .team-right { justify-content: flex-end; text-align: left; } 
-        .team-left { justify-content: flex-start; text-align: right; } 
+        /* رێکخستنا ناڤان ل دویف داخوازیا تە */
+        .home-team { justify-content: flex-start; text-align: right; } /* لایێ چەپێ د ڤی دیزاینی دا */
+        .away-team { justify-content: flex-end; text-align: left; }  /* لایێ ڕاستێ */
 
         .team-logo { width: 32px; height: 32px; border-radius: 50%; background: #fff; object-fit: contain; padding: 2px; }
         .vs-text { color: var(--dsc-yellow); font-weight: bold; font-size: 12px; min-width: 30px; }
         .stadium { font-size: 10px; color: #555; margin-top: 8px; border-top: 1px solid #1f2633; padding-top: 5px; }
-
-        /* SQUAD LIST STYLE */
-        .player-card {
-            display: flex;
-            align-items: center;
-            background: #101826;
-            padding: 12px;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            border-right: 5px solid var(--dsc-yellow);
-        }
-        .player-img { width: 55px; height: 55px; border-radius: 50%; margin-left: 15px; border: 2px solid var(--dsc-blue); object-fit: cover; }
-        .player-info-text { flex-grow: 1; text-align: right; }
-        .player-name { font-weight: bold; font-size: 17px; display: block; }
-        .player-details { font-size: 11px; color: #aaa; }
-        .player-num { font-weight: bold; color: var(--dsc-yellow); margin-right: 5px; }
 
         .footer { margin-top: 20px; text-align: center; padding-bottom: 30px; font-size: 12px; color: #444; }
     </style>
@@ -107,106 +93,99 @@
 
 <div class="container">
     
-    <!-- MATCHES SECTION -->
     <div id="matchesTab" class="tab-content active">
         
-        <!-- 1. NAFT MISSAN (DUHOK STADIUM) -->
         <div class="match-card">
             <div class="match-header"><span>2026/05/05 | 5:30 PM</span><span>ROUND (33)</span></div>
             <div class="teams-row">
-                <div class="team-box team-right">
-                    <span>DUHOK</span>
+                <div class="team-box home-team">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                    <span>DUHOK</span>
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box team-left">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo">
+                <div class="team-box away-team">
                     <span>NAFT MISSAN</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcxaaj4U9lEIgymjxJyBmOKVij6AnvAMt4KQGBl0eRw&s=10" class="team-logo">
                 </div>
             </div>
             <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
 
-        <!-- 2. AL QASIM (DUHOK STADIUM) -->
         <div class="match-card">
             <div class="match-header"><span>2026/05/10 | 5:30 PM</span><span>ROUND (34)</span></div>
             <div class="teams-row">
-                <div class="team-box team-right">
-                    <span>DUHOK</span>
+                <div class="team-box home-team">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                    <span>DUHOK</span>
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box team-left">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo">
+                <div class="team-box away-team">
                     <span>AL QASIM</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sNg4dpMEwfR4kDutAZctDUGoPfOKXkuBuKQ6cchu5A&s=10" class="team-logo">
                 </div>
             </div>
             <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
 
-        <!-- 3. AL-MOSUL (MOSUL STADIUM) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box team-right">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
-                    <span>DUHOK</span>
-                </div>
-                <span class="vs-text">VS</span>
-                <div class="team-box team-left">
+                <div class="team-box home-team">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFMc2v_NjYtgZ8Lpe4axGRz8hee5T_UNCkrU43KJHaA&s" class="team-logo">
                     <span>AL-MOSUL</span>
+                </div>
+                <span class="vs-text">VS</span>
+                <div class="team-box away-team">
+                    <span>DUHOK</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                 </div>
             </div>
             <div class="stadium">📍 MOSUL STADIUM</div>
         </div>
 
-        <!-- 4. AL-NAFT (AL-NAFT STADIUM) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box team-right">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
-                    <span>DUHOK</span>
-                </div>
-                <span class="vs-text">VS</span>
-                <div class="team-box team-left">
+                <div class="team-box home-team">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhsMqwRZlrZYEV12jliVLEi9jb9lQ1ticIWj-6u318Q&s=10" class="team-logo">
                     <span>AL-NAFT</span>
+                </div>
+                <span class="vs-text">VS</span>
+                <div class="team-box away-team">
+                    <span>DUHOK</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
                 </div>
             </div>
             <div class="stadium">📍 AL-NAFT STADIUM</div>
         </div>
 
-        <!-- 5. AL-KAHRABAA (DUHOK STADIUM) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box team-right">
-                    <span>DUHOK</span>
+                <div class="team-box home-team">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                    <span>DUHOK</span>
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box team-left">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYP_b2BJfRfs5EQcQvveP7THxzWuZ3Sjxg-8TGkRK1w&s" class="team-logo">
+                <div class="team-box away-team">
                     <span>AL-KAHRABAA</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYP_b2BJfRfs5EQcQvveP7THxzWuZ3Sjxg-8TGkRK1w&s" class="team-logo">
                 </div>
             </div>
             <div class="stadium">📍 DUHOK STADIUM</div>
         </div>
 
-        <!-- 6. DIYALA (DUHOK STADIUM) -->
         <div class="match-card">
             <div class="match-header"><span>--/--/2026</span><span>PENDING</span></div>
             <div class="teams-row">
-                <div class="team-box team-right">
-                    <span>DUHOK</span>
+                <div class="team-box home-team">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWhKOhIpShTSor6ksrr86rTlbi1SmyhVmgHItxIn3ng&s=10" class="team-logo">
+                    <span>DUHOK</span>
                 </div>
                 <span class="vs-text">VS</span>
-                <div class="team-box team-left">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduEgn730fBWI0TpAb8JoNrckz2OtSvOvTb_-QYsdJLg&s=10" class="team-logo">
+                <div class="team-box away-team">
                     <span>DIYALA</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSduEgn730fBWI0TpAb8JoNrckz2OtSvOvTb_-QYsdJLg&s=10" class="team-logo">
                 </div>
             </div>
             <div class="stadium">📍 DUHOK STADIUM</div>
@@ -214,26 +193,11 @@
 
     </div>
 
-    <!-- SQUAD SECTION -->
     <div id="squadTab" class="tab-content">
-        <h3 style="color: var(--dsc-yellow); border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 16px;">STAFF</h3>
-        <div class="player-card">
-            <img src="https://i.ibb.co/L6vVshm/Ahmed-Khalaf.png" class="player-img">
-            <div class="player-info-text">
-                <span class="player-name">Ahmed Khalaf</span>
-                <span class="player-pos" style="color:var(--dsc-yellow); font-size:12px;">Head Coach</span>
-            </div>
-        </div>
-
-        <h3 style="color: var(--dsc-yellow); border-bottom: 1px solid #333; padding-bottom: 5px; margin-top:20px; font-size: 16px;">PLAYERS</h3>
-        
-        <!-- ZHIAR IBRAHIM -->
-        <div class="player-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6-mXm6y3O7j3Y_DndzJ6-S-D-E1H5i7fQiw&s" class="player-img">
-            <div class="player-info-text">
-                <span class="player-name">Zhiar Ibrahim</span>
-                <span class="player-details">Iraq | 19 years | <span class="player-num">#16</span></span>
-            </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="https://i.ibb.co/L6vVshm/Ahmed-Khalaf.png" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--dsc-yellow);">
+            <h3 style="margin: 10px 0 5px 0;">Ahmed Khalaf</h3>
+            <p style="color: var(--dsc-yellow); margin: 0;">Coach</p>
         </div>
     </div>
 
