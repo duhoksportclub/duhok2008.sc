@@ -40,14 +40,13 @@
 
         .container { width: 100%; max-width: 450px; padding: 15px; }
 
-        /* کارتا یاریێ - لوگۆ ل دەرڤە */
+        /* کارتا یاریێ */
         .match-card {
             border: 1px solid #d4af37;
             border-radius: 25px;
             padding: 20px;
             margin-bottom: 20px;
             background: rgba(10, 20, 40, 0.5);
-            position: relative;
         }
 
         .match-info-top {
@@ -61,34 +60,40 @@
         .teams-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 10px; /* نێزیککرنا لایێ چەپ و ڕاست ژ VS */
         }
 
-        /* لایێ چەپێ: لوگۆ ل دەرڤە، ناڤ ل ڕەخ VS */
-        .team-box { display: flex; align-items: center; width: 45%; }
-        .left-side { flex-direction: row-reverse; justify-content: flex-start; }
-        .right-side { flex-direction: row; justify-content: flex-start; }
+        .team-box { 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; /* نێزیککرنا لوگۆ و ناڤی */
+            width: 40%;
+        }
+        
+        .left-side { justify-content: flex-end; }
+        .right-side { justify-content: flex-start; }
 
-        .logo-outer {
-            width: 50px;
-            height: 50px;
+        .logo-img {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             border: 2px solid #d4af37;
             background: white;
-            z-index: 2;
         }
 
-        .name-inner {
+        .name-text {
             font-weight: bold;
-            font-size: 15px;
-            margin: 0 10px;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
         .vs-text {
-            font-size: 35px;
+            font-size: 32px;
             font-weight: 900;
             font-style: italic;
             color: #d4af37;
+            margin: 0 5px;
         }
 
         .stadium { text-align: center; margin-top: 15px; font-size: 12px; font-weight: bold; }
@@ -112,18 +117,18 @@
         <div class="match-info-top">ROUND (33) | 2026/05/05 | PM 5:30</div>
         
         <div class="teams-container">
-            <!-- دهۆک: لوگۆ ل کەناری، ناڤ ل ڕەخ VS -->
+            <!-- لایێ چەپێ: ناڤ و لوگۆ نێزیکی ئێک -->
             <div class="team-box left-side">
-                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-outer">
-                <span class="name-inner">DUHOK</span>
+                <span class="name-text">NAFT MISSAN</span>
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
             </div>
 
             <div class="vs-text">VS</div>
 
-            <!-- نەفت میسان: ناڤ ل ڕەخ VS، لوگۆ ل کەناری -->
+            <!-- لایێ ڕاستێ: لوگۆ و ناڤ نێزیکی ئێک -->
             <div class="team-box right-side">
-                <span class="name-inner">NAFT MISSAN</span>
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-outer">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
+                <span class="name-text">DUHOK</span>
             </div>
         </div>
 
