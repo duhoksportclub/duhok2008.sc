@@ -15,7 +15,6 @@
             overflow-x: hidden; width: 100vw; position: fixed; height: 100%;
         }
 
-        /* لێرە من ڕەنگەکێ جوان دانا دا کێشەیا وێنەی نەمینیت */
         .header {
             width: 100%;
             height: 180px;
@@ -24,8 +23,11 @@
             align-items: center;
             border-bottom: 2px solid #d4af37;
             position: relative;
-            background: linear-gradient(135deg, #0a1428 0%, #1a3a5a 50%, #050a14 100%);
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+            /* من لینکێ وێنەی گوهۆڕی بۆ یەکەکێ دی کو ئەگەرێ کارکرنا وی زێدەترە */
+            background-image: linear-gradient(to bottom, rgba(5, 10, 20, 0.4), #050a14), 
+                              url('https://p1.pxfuel.com/preview/446/232/668/stadium-football-arena-pitch.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .side-font {
@@ -38,7 +40,7 @@
         }
 
         .header h1 { 
-            z-index: 5; margin: 0; color: #d4af37; font-size: 20px; font-weight: 900;
+            z-index: 5; margin: 0; color: #d4af37; font-size: 19px; font-weight: 900;
             text-align: center; text-shadow: 2px 2px 10px #000; line-height: 1.2;
         }
 
@@ -51,17 +53,11 @@
         .teams-row { display: flex; align-items: center; justify-content: space-between; }
         .team-box { flex: 1; display: flex; flex-direction: column; align-items: center; }
         
-        /* لوگۆ نوکە ب ڕەنگێن باکگراوند یێن سادە دا دیار بن */
-        .logo-placeholder { 
-            width: 60px; height: 60px; border-radius: 50%; border: 2px solid #d4af37; 
-            background: #1a3a5a; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;
-        }
-        
+        .logo-img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #d4af37; background: #fff; }
         .vs-text { font-size: 32px; font-weight: 900; color: #d4af37; }
-        .team-name { font-weight: bold; font-size: 12px; color: #fff; margin-top: 10px; }
+        .team-name { font-weight: bold; font-size: 12px; color: #fff; margin-top: 10px; text-align: center; }
 
         .tiktok-btn { display: flex; align-items: center; justify-content: center; width: 85%; margin: 15px auto; background: #000; color: #fff; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #fff; }
-        .hidden { display: none; }
     </style>
 </head>
 <body>
@@ -79,17 +75,17 @@
     <button class="tab-btn">COMMUNITY</button>
 </div>
 
-<div class="container" id="matches-area">
+<div class="container">
     <div class="match-card">
         <div style="text-align:center; font-size:11px; margin-bottom:15px; color: #aaa;">ROUND (33) | 2026/05/05</div>
         <div class="teams-row">
             <div class="team-box">
-                <div class="logo-placeholder">DSC</div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
                 <div class="team-name">DUHOK</div>
             </div>
             <div class="vs-text">VS</div>
             <div class="team-box">
-                <div class="logo-placeholder">NM</div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
                 <div class="team-name">NAFT MISSAN</div>
             </div>
         </div>
