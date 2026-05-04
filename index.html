@@ -12,7 +12,7 @@
             font-family: 'Segoe UI', sans-serif;
             margin: 0; padding: 0;
             display: flex; flex-direction: column; align-items: center;
-            overflow-x: hidden; width: 100vw; position: fixed; height: 100%;
+            overflow-x: hidden; width: 100vw;
         }
 
         .header {
@@ -23,11 +23,9 @@
             align-items: center;
             border-bottom: 2px solid #d4af37;
             position: relative;
-            /* لێرە من هەردوو وێنە پێکڤە دانا وەک تێکەل (Overlay) */
             background: linear-gradient(to bottom, rgba(5, 10, 20, 0.4), #050a14), 
-                        url('https://pbs.twimg.com/media/GrGVejLWUAAiwNv.jpg') left center no-repeat,
-                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu9KzknhiVsImceIPQNnBd7YmAWl7HFO_-IEQFSnFY1w&s') right center no-repeat;
-            background-size: contain, 50% 100%, 50% 100%;
+                        url('https://pbs.twimg.com/media/GrGVejLWUAAiwNv.jpg') left center / 50% 100% no-repeat,
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu9KzknhiVsImceIPQNnBd7YmAWl7HFO_-IEQFSnFY1w&s') right center / 50% 100% no-repeat;
             background-color: #0a1428;
         }
 
@@ -45,26 +43,26 @@
             text-align: center; text-shadow: 2px 2px 10px #000; line-height: 1.2;
         }
 
-        .nav-tabs { display: flex; width: 100%; background: #0a1428; border-bottom: 1px solid #d4af37; }
+        .nav-tabs { display: flex; width: 100%; background: #0a1428; border-bottom: 1px solid #d4af37; position: sticky; top: 0; z-index: 10; }
         .tab-btn { flex: 1; padding: 15px 5px; color: #d4af37; background: none; border: none; font-weight: bold; font-size: 11px; }
         .tab-btn.active { border-bottom: 3px solid #d4af37; background: rgba(212, 175, 55, 0.1); }
 
-        .container { width: 100%; max-width: 450px; padding: 20px 15px; box-sizing: border-box; overflow-y: auto; height: calc(100vh - 230px); }
-        .match-card { border: 2px solid #d4af37; border-radius: 20px; padding: 25px 10px; background: rgba(10, 20, 40, 0.9); margin-bottom: 20px; }
+        .container { width: 100%; max-width: 450px; padding: 20px 15px; box-sizing: border-box; }
+        .match-card { border: 2px solid #d4af37; border-radius: 20px; padding: 20px 10px; background: rgba(10, 20, 40, 0.9); margin-bottom: 20px; }
         .teams-row { display: flex; align-items: center; justify-content: space-between; }
         .team-box { flex: 1; display: flex; flex-direction: column; align-items: center; }
         
-        .logo-img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #d4af37; background: #fff; padding: 2px; }
-        .vs-text { font-size: 32px; font-weight: 900; color: #d4af37; }
-        .team-name { font-weight: bold; font-size: 12px; color: #fff; margin-top: 10px; }
+        .logo-img { width: 55px; height: 55px; border-radius: 50%; border: 1px solid #d4af37; background: #fff; padding: 2px; }
+        .vs-text { font-size: 28px; font-weight: 900; color: #d4af37; }
+        .team-name { font-weight: bold; font-size: 11px; color: #fff; margin-top: 8px; text-align: center; }
+        .league-label { text-align:center; margin-top:12px; font-size:12px; font-weight:bold; color: #d4af37; letter-spacing: 1px; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 10px; }
 
-        .tiktok-btn { display: flex; align-items: center; justify-content: center; width: 85%; margin: 15px auto; background: #000; color: #fff; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #fff; }
+        .tiktok-btn { display: flex; align-items: center; justify-content: center; width: 85%; margin: 20px auto; background: #000; color: #fff; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #fff; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <!-- هژمار: 34 ل چەپێ و 93 ل ڕاستێ -->
     <div class="side-font">34</div>
     <h1>DUHOK<br>SPORT CLUB</h1>
     <div class="side-font">93</div>
@@ -78,8 +76,9 @@
 </div>
 
 <div class="container">
+    <!-- یارییا نەفت مەیسان -->
     <div class="match-card">
-        <div style="text-align:center; font-size:11px; margin-bottom:15px; color: #aaa;">ROUND (33) | 2026/05/05</div>
+        <div style="text-align:center; font-size:10px; margin-bottom:12px; color: #aaa;">ROUND (33) | 2026/05/05</div>
         <div class="teams-row">
             <div class="team-box">
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
@@ -91,8 +90,26 @@
                 <div class="team-name">NAFT MISSAN</div>
             </div>
         </div>
-        <div style="text-align:center; margin-top:15px; font-size:11px; color: #d4af37;">Iraq Cup & Gulf Cup 🏆</div>
+        <div class="league-label">IRAQ STARS LEAGUE</div>
     </div>
+
+    <!-- یارییا موسڵ -->
+    <div class="match-card">
+        <div style="text-align:center; font-size:10px; margin-bottom:12px; color: #aaa;">UPCOMING MATCH</div>
+        <div class="teams-row">
+            <div class="team-box">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
+                <div class="team-name">DUHOK</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="logo-img" style="display:flex; align-items:center; justify-content:center; background:#0a1428; color:#fff; font-size:10px;">MOSUL</div>
+                <div class="team-name">MOSUL SC</div>
+            </div>
+        </div>
+        <div class="league-label">IRAQ STARS LEAGUE</div>
+    </div>
+
     <a href="https://www.tiktok.com/@duhok2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK</a>
 </div>
 
