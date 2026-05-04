@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
         body {
             background-color: #050a14;
             color: #d4af37;
@@ -13,32 +15,50 @@
             overflow-x: hidden; width: 100vw; position: fixed; height: 100%;
         }
 
-        /* سەرێ لاپەرەی دگەل وێنەی */
+        /* سەرێ لاپەرەی یێ نووی */
         .header {
             width: 100%;
-            height: 180px;
-            background-image: linear-gradient(to bottom, rgba(5, 10, 20, 0.2), #050a14), 
-                              url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop'); /* وێنەیەکێ وەرزشی یێ جوان */
-            background-size: cover;
-            background-position: center;
+            height: 160px;
+            background-color: #050a14;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             border-bottom: 2px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .side-font {
+            font-family: 'Orbitron', sans-serif; /* فۆنتەکێ وەرزشی و مۆدێرن */
+            font-size: 28px;
+            font-weight: 900;
+            color: #d4af37;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+            z-index: 2;
         }
 
         .header h1 { 
+            z-index: 2;
             margin: 0; 
             color: #fff; 
-            font-size: 22px; 
+            font-size: 18px; 
             font-weight: 900; 
-            text-shadow: 2px 2px 10px #000;
-            letter-spacing: 2px;
+            text-align: center;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px #000;
         }
 
         .nav-tabs {
-            display: flex; width: 100%; background: #0a1428; border-bottom: 1px solid #d4af37;
+            display: flex; width: 100%; background: #0a1428; border-bottom: 1px solid #d4af37; z-index: 3;
         }
         .tab-btn {
             flex: 1; padding: 12px 5px; color: #d4af37; background: none; border: none;
@@ -48,7 +68,7 @@
 
         .container {
             width: 100%; max-width: 450px; padding: 20px 15px; box-sizing: border-box;
-            overflow-y: auto; height: calc(100vh - 230px);
+            overflow-y: auto; height: calc(100vh - 210px);
         }
 
         .match-card {
@@ -58,29 +78,27 @@
         }
 
         .teams-row { display: flex; align-items: center; justify-content: space-between; padding: 0 10px; }
-        .vs-box { display: flex; align-items: center; gap: 8px; }
         .logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #d4af37; background: white; }
         .vs-text { font-size: 35px; font-weight: 900; font-style: italic; color: #d4af37; }
-        .team-name { font-weight: bold; font-size: 13px; color: #fff; }
+        .team-name { font-weight: bold; font-size: 12px; color: #fff; margin-top: 5px; }
 
         .tiktok-btn {
             display: flex; align-items: center; justify-content: center;
-            width: 85%; margin: 20px auto; background: #000; color: #fff;
+            width: 85%; margin: 10px auto; background: #000; color: #fff;
             padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #fff;
         }
 
-        .coming-soon-section {
-            text-align: center; padding: 80px 20px;
-        }
-        .soon-title { font-size: 32px; font-weight: 900; opacity: 0.3; font-style: italic; letter-spacing: 2px; }
-
+        .coming-soon-section { text-align: center; padding: 60px 20px; opacity: 0.3; }
         .hidden { display: none; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>DUHOK SPORT CLUB</h1>
+    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop" class="header-bg-img">
+    <div class="side-font">93</div>
+    <h1>DUHOK<br>SPORT CLUB</h1>
+    <div class="side-font">34</div>
 </div>
 
 <div class="nav-tabs">
@@ -90,20 +108,15 @@
     <button class="tab-btn" id="cBtn" onclick="show('chat')">COMMUNITY</button>
 </div>
 
-<!-- پشکا یارییان -->
 <div class="container" id="matches-area">
     <div class="match-card">
-        <div style="text-align:center; font-size:11px; margin-bottom:15px; color: #aaa;">ROUND (33) | 2026/05/05 | 05:30 PM</div>
+        <div style="text-align:center; font-size:11px; margin-bottom:15px; color: #aaa;">ROUND (33) | 2026/05/05</div>
         <div class="teams-row">
             <div style="text-align: center;">
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
                 <div class="team-name">NAFT MISSAN</div>
             </div>
-            
-            <div class="vs-box">
-                <div class="vs-text">VS</div>
-            </div>
-
+            <div class="vs-text">VS</div>
             <div style="text-align: center;">
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
                 <div class="team-name">DUHOK</div>
@@ -111,40 +124,25 @@
         </div>
         <div style="text-align:center; margin-top:20px; font-size:12px; color: #d4af37;">DUHOK STADIUM 📍</div>
     </div>
-    
-    <a href="https://www.tiktok.com/@duhok2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK 🎬</a>
+    <a href="https://www.tiktok.com/@duhok2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK</a>
 </div>
 
-<!-- پشکێن دی یێن Coming Soon -->
 <div class="container hidden" id="videos-area">
-    <div class="coming-soon-section">
-        <div class="soon-title">COMING SOON</div>
-        <p>ئەڤ پشکە دێ ل نێزیک هێتە زێدەکرن</p>
-    </div>
+    <div class="coming-soon-section"><h1>COMING SOON</h1></div>
 </div>
-
 <div class="container hidden" id="squad-area">
-    <div class="coming-soon-section">
-        <div class="soon-title">COMING SOON</div>
-        <p>لیستا یاریزانان ل ژێر بەرهەڤکرنێیە</p>
-    </div>
+    <div class="coming-soon-section"><h1>COMING SOON</h1></div>
 </div>
-
 <div class="container hidden" id="chat-area">
-    <div class="coming-soon-section">
-        <div class="soon-title">COMING SOON</div>
-        <p>پشکا گەنگەشەیێ دێ ل نێزیک کار کەت</p>
-    </div>
+    <div class="coming-soon-section"><h1>COMING SOON</h1></div>
 </div>
 
 <script>
     function show(type) {
         const areas = ['matches-area', 'videos-area', 'squad-area', 'chat-area'];
         const btns = ['mBtn', 'vBtn', 'sBtn', 'cBtn'];
-        
         areas.forEach(a => document.getElementById(a).classList.add('hidden'));
         btns.forEach(b => document.getElementById(b).classList.remove('active'));
-
         document.getElementById(type + '-area').classList.remove('hidden');
         document.getElementById(type.charAt(0) + 'Btn').classList.add('active');
     }
