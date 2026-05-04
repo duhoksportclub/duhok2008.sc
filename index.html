@@ -3,34 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUHOK SPORT CLUB</title>
+    
     <style>
-        :root { --dsc-blue: #003366; --dsc-yellow: #ffcc00; --dsc-dark: #050a14; }
-        body { background-color: var(--dsc-dark); color: white; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        .header { width: 100%; background-color: var(--dsc-blue); padding: 25px 0; text-align: center; border-bottom: 4px solid var(--dsc-yellow); }
-        .header h1 { margin: 0; font-size: 26px; color: var(--dsc-yellow); }
-        .container { width: 100%; max-width: 450px; padding: 20px; box-sizing: border-box; }
-        .match-card { background: #101826; border-radius: 15px; padding: 20px; margin-bottom: 15px; border: 1px solid #1f2633; text-align: center; }
+        :root { 
+            --dsc-blue: #003366; 
+            --dsc-yellow: #ffcc00; 
+            --dsc-dark: #050a14; 
+        }
+        body { 
+            background-color: var(--dsc-dark); 
+            color: white; 
+            font-family: sans-serif; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .header { 
+            width: 100%; 
+            background-color: var(--dsc-blue); 
+            padding: 25px 0; 
+            text-align: center; 
+            border-bottom: 4px solid var(--dsc-yellow); 
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 26px; 
+            color: var(--dsc-yellow); 
+            text-transform: uppercase;
+        }
+        .container { 
+            width: 100%; 
+            max-width: 450px; 
+            padding: 20px; 
+        }
+        .section-title { 
+            text-align: center; 
+            font-size: 16px; 
+            margin: 20px 0; 
+            background: var(--dsc-blue);
+            color: var(--dsc-yellow);
+            padding: 8px; 
+            border-radius: 5px; 
+            font-weight: bold;
+        }
+        .match-card { 
+            background: #101826; 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-bottom: 15px; 
+            border: 1px solid #1f2633; 
+            text-align: center; 
+        }
+        .match-header { 
+            display: flex; 
+            justify-content: space-between; 
+            font-size: 12px; 
+            color: var(--dsc-yellow); 
+            margin-bottom: 5px; 
+        }
+        .day-text { color: #888; font-size: 11px; margin-bottom: 10px; text-transform: uppercase; }
         
-        /* ئەڤە ئەو پشکەیە کو جهێ لوگۆ و ناڤی دگوهۆڕیت */
-        .teams-row { display: flex; align-items: center; justify-content: center; gap: 10px; flex-direction: row; }
-        .team-box { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: bold; flex-direction: row; } /* ناڤ ل ڕاستێ، لوگۆ ل چەپێ */
+        .teams-row { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; 
+            margin: 10px 0;
+            flex-direction: row; /* ئەڤە دێ هێلیت وەک تە دڤێت لێ هێت */
+        }
         
-        .team-logo { width: 40px; height: 40px; border-radius: 50%; background: #fff; padding: 2px; }
-        .vs-text { color: var(--dsc-yellow); font-size: 14px; font-weight: bold; margin: 0 10px; }
-        .match-header { display: flex; justify-content: space-between; font-size: 11px; color: var(--dsc-yellow); margin-bottom: 10px; }
+        .team-box { 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            font-size: 17px; 
+            font-weight: bold;
+            flex-direction: row; /* ناڤ ل چەپێ و لوگۆ ل ڕاستێ */
+        }
+        
+        .team-logo { width: 35px; height: 35px; border-radius: 50%; background: #fff; object-fit: contain; padding: 2px; }
+        .vs-text { color: var(--dsc-yellow); font-size: 14px; font-weight: bold; }
+        .stadium { font-size: 12px; color: #888; margin-top: 5px; }
+        
+        .toggle-btn {
+            background-color: var(--dsc-blue);
+            color: var(--dsc-yellow);
+            border: 2px solid var(--dsc-yellow);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        #oldMatchesSection { display: none; width: 100%; }
+        .footer { margin-top: 30px; text-align: center; padding-bottom: 40px; }
+        .official-tag { color: var(--dsc-yellow); font-size: 14px; font-weight: bold; }
+        .tiktok-id { display: block; margin-top: 5px; font-size: 13px; color: #aaa; }
     </style>
 </head>
 <body>
-    <div class="header"><h1>DUHOK SPORT CLUB</h1></div>
-    <div class="container">
-        <div class="match-card">
-            <div class="match-header"><span>2026/05/05</span><span>ROUND (33)</span></div>
-            <div class="teams-row">
-                <div class="team-box"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
-                <span class="vs-text">VS</span>
-                <div class="team-box"><span>NAFT MISSAN</span><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo"></div>
-            </div>
+
+<div class="header">
+    <h1>DUHOK SPORT CLUB</h1>
+</div>
+
+<div class="container">
+    
+    <div class="section-title">UPCOMING MATCHES</div>
+
+    <!-- NAFT MISSAN -->
+    <div class="match-card">
+        <div class="match-header"><span>2026/05/05 | 5:30 PM</span><span>ROUND (33)</span></div>
+        <div class="day-text">TUESDAY / سێشەمبە</div>
+        <div class="teams-row">
+            <div class="team-box"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
+            <span class="vs-text">VS</span>
+            <div class="team-box"><span>NAFT MISSAN</span><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo"></div>
         </div>
+        <div class="stadium">📍 DUHOK STADIUM</div>
     </div>
+
+    <!-- AL QASIM -->
+    <div class="match-card">
+        <div class="match-header"><span>2026/05/10 | 5:30 PM</span><span>ROUND (34)</span></div>
+        <div class="day-text">SUNDAY / ئێک شەمبە</div>
+        <div class="teams-row">
+            <div class="team-box"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
+            <span class="vs-text">VS</span>
+            <div class="team-box"><span>AL QASIM</span><img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo"></div>
+        </div>
+        <div class="stadium">📍 DUHOK STADIUM</div>
+    </div>
+
+    <!-- AL-NAFT -->
+    <div class="match-card">
+        <div class="match-header"><span>2026/--/--</span><span>PENDING</span></div>
+        <div class="day-text">DATE NOT SET / ڕۆژ دیار نینە</div>
+        <div class="teams-row">
+            <div class="team-box"><span>DUHOK</span><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo"></div>
+            <span class="vs-text">VS</span>
+            <div class="team-box"><span>AL-NAFT</span><img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Al-Naft_SC_logo.png" class="team-logo"></div>
+        </div>
+        <div class="stadium">📍 AL-NAFT STADIUM</div>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleMatches()">VIEW RESULTS / ئەنجامێن یارییان</button>
+
+    <div id="oldMatchesSection">
+        <div class="section-title">SEASON 2025-2026</div>
+        <p style="text-align: center; color: #888;">چو ئەنجام نینن...</p>
+    </div>
+
+    <div class="footer">
+        <div class="official-tag">OFFICIAL PRODUCT</div>
+        <div class="tiktok-id">TIK: duhok2008.sc</div>
+    </div>
+</div>
+
+<script>
+    function toggleMatches() {
+        var x = document.getElementById("oldMatchesSection");
+        if (x.style.display === "none" || x.style.display === "") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>
