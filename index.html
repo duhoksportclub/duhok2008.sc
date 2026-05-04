@@ -24,7 +24,7 @@
             justify-content: space-around;
             border-bottom: 2px solid #8a6d3b;
         }
-        .header-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #d4af37; background: white; }
+        .header img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #d4af37; background: white; }
         .header h1 { margin: 0; color: #000; font-size: 20px; font-weight: bold; }
 
         .nav-bar {
@@ -35,8 +35,6 @@
             padding: 15px 0;
             border-bottom: 2px solid #d4af37;
         }
-        .nav-item { color: #d4af37; font-weight: bold; font-size: 14px; }
-        .active-tab { border-bottom: 3px solid #d4af37; padding-bottom: 5px; }
 
         .container { width: 100%; max-width: 450px; padding: 15px; }
 
@@ -44,7 +42,7 @@
         .match-card {
             border: 1px solid #d4af37;
             border-radius: 25px;
-            padding: 20px;
+            padding: 25px 15px;
             margin-bottom: 20px;
             background: rgba(10, 20, 40, 0.5);
         }
@@ -61,39 +59,48 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px; /* نێزیککرنا لایێ چەپ و ڕاست ژ VS */
+            gap: 5px;
         }
 
+        /* ستایلێ تیمان: لوگۆ ل کەناری و ناڤ ل ڕەخ VS */
         .team-box { 
             display: flex; 
             align-items: center; 
-            gap: 5px; /* نێزیککرنا لوگۆ و ناڤی */
-            width: 40%;
+            width: 45%;
         }
-        
-        .left-side { justify-content: flex-end; }
-        .right-side { justify-content: flex-start; }
+
+        /* لایێ چەپێ: لوگۆ --- ناڤ (نێزیکی VS) */
+        .left-side { 
+            flex-direction: row; 
+            justify-content: flex-start;
+        }
+
+        /* لایێ ڕاستێ: ناڤ (نێزیکی VS) --- لوگۆ */
+        .right-side { 
+            flex-direction: row-reverse; 
+            justify-content: flex-start;
+        }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             border: 2px solid #d4af37;
             background: white;
+            flex-shrink: 0;
         }
 
         .name-text {
             font-weight: bold;
             font-size: 14px;
-            white-space: nowrap;
+            margin: 0 8px; /* نێزیککرنا ناڤی ژ لوگۆی */
         }
 
         .vs-text {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 900;
             font-style: italic;
             color: #d4af37;
-            margin: 0 5px;
         }
 
         .stadium { text-align: center; margin-top: 15px; font-size: 12px; font-weight: bold; }
@@ -102,14 +109,14 @@
 <body>
 
 <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="header-img">
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png">
     <h1>DUHOK SPORT CLUB</h1>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_x-vXWv_z3Z6h7iO8yQyE9v1X3Z5f6g7h8i" class="header-img">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_x-vXWv_z3Z6h7iO8yQyE9v1X3Z5f6g7h8i">
 </div>
 
 <div class="nav-bar">
-    <span class="nav-item">SQUAD</span>
-    <span class="nav-item active-tab">MATCHES</span>
+    <span style="color:#d4af37; font-weight:bold;">MATCHES</span>
+    <span style="color:#d4af37; font-weight:bold;">SQUAD</span>
 </div>
 
 <div class="container">
@@ -117,15 +124,15 @@
         <div class="match-info-top">ROUND (33) | 2026/05/05 | PM 5:30</div>
         
         <div class="teams-container">
-            <!-- لایێ چەپێ: ناڤ و لوگۆ نێزیکی ئێک -->
+            <!-- تیمێ چەپێ: لوگۆ ل کەناری، ناڤ ل ڕەخ VS -->
             <div class="team-box left-side">
-                <span class="name-text">NAFT MISSAN</span>
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
+                <span class="name-text">NAFT MISSAN</span>
             </div>
 
             <div class="vs-text">VS</div>
 
-            <!-- لایێ ڕاستێ: لوگۆ و ناڤ نێزیکی ئێک -->
+            <!-- تیمێ ڕاستێ: ناڤ ل ڕەخ VS، لوگۆ ل کەناری -->
             <div class="team-box right-side">
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
                 <span class="name-text">DUHOK</span>
