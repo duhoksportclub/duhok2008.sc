@@ -5,147 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root { 
-            --gold: #d4af37; 
-            --gold-gradient: linear-gradient(180deg, #f1d592, #d4af37);
-            --dark-bg: #050a14;
+            --gold-main: #d4af37; 
+            --gold-light: #f1d592;
+            --dark-blue: #050a14;
         }
         body { 
-            background-color: var(--dark-bg); 
+            background-color: var(--dark-blue); 
             color: white; 
             font-family: sans-serif; 
             margin: 0; 
-            padding: 0;
-            display: flex;
-            flex-direction: column;
+            display: flex; 
+            flex-direction: column; 
             align-items: center;
         }
 
-        /* Header وەک وێنەی */
+        /* Header ب تەمامی وەک وێنەی */
         .header { 
             width: 100%; 
-            background: var(--gold-gradient);
-            padding: 20px 0; 
+            background: linear-gradient(180deg, var(--gold-light), var(--gold-main));
+            padding: 25px 0; 
             text-align: center;
-            border-bottom: 2px solid #8a6d3b;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
-        .header h1 { margin: 0; color: #000; font-size: 24px; font-weight: bold; }
+        .header h1 { margin: 0; color: #000; font-size: 24px; font-weight: bold; text-transform: uppercase; }
 
-        .nav-bar {
+        /* پشکا ناڤبەینێ */
+        .nav-tabs {
             width: 100%;
             background: #0a1428;
             display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold-main);
         }
-        .nav-item { color: var(--gold); font-weight: bold; font-size: 14px; text-decoration: none; }
+        .tab { flex: 1; text-align: center; padding: 15px; color: var(--gold-main); font-weight: bold; font-size: 14px; }
+        .tab.active { border-bottom: 4px solid var(--gold-main); }
 
-        .container { width: 100%; max-width: 450px; padding: 15px; }
-
-        .section-title { 
-            text-align: center; 
-            color: var(--gold); 
-            font-size: 16px; 
-            font-weight: bold; 
-            margin: 20px 0;
-            text-transform: uppercase;
-        }
+        .container { width: 100%; max-width: 450px; padding: 15px; box-sizing: border-box; }
+        .section-title { text-align: center; color: var(--gold-main); font-size: 16px; font-weight: bold; margin: 20px 0; letter-spacing: 1px; }
 
         /* کارتا یاریێ رێک وەک وێنەی */
         .match-card { 
-            border: 1px solid var(--gold); 
-            border-radius: 20px; 
+            border: 2px solid var(--gold-main); 
+            border-radius: 25px; 
             padding: 20px; 
-            margin-bottom: 15px; 
-            background: rgba(10, 20, 40, 0.5);
-            position: relative;
-        }
-
-        .match-info-top { 
-            font-size: 11px; 
-            color: var(--gold); 
-            display: flex; 
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-
-        .teams-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 10px 0;
-        }
-
-        .team { display: flex; align-items: center; gap: 10px; width: 40%; }
-        .team.home { justify-content: flex-start; flex-direction: row; } /* ناڤ پاشان لوگۆ */
-        .team.away { justify-content: flex-end; flex-direction: row-reverse; } /* لوگۆ پاشان ناڤ */
-
-        .team-name { color: var(--gold); font-weight: bold; font-size: 15px; }
-        .team-logo { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--gold); background: #fff; }
-
-        .vs-box { 
-            font-size: 28px; 
-            font-weight: 900; 
-            color: var(--gold); 
-            font-style: italic;
-            text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
-        }
-
-        .stadium { 
-            font-size: 12px; 
-            color: var(--gold); 
-            margin-top: 10px; 
+            margin-bottom: 20px; 
+            background: rgba(10, 20, 40, 0.6);
             text-align: center;
         }
+
+        .match-info { 
+            font-size: 12px; 
+            color: var(--gold-main); 
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .teams-row { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        /* لایێ چەپێ: ناڤ پاشان لوگۆ */
+        .team-left { display: flex; align-items: center; gap: 10px; width: 42%; justify-content: flex-end; }
+        /* لایێ ڕاستێ: لوگۆ پاشان ناڤ */
+        .team-right { display: flex; align-items: center; gap: 10px; width: 42%; justify-content: flex-start; }
+
+        .team-name { color: var(--gold-main); font-weight: bold; font-size: 16px; }
+        .team-logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--gold-main); background: #fff; padding: 2px; }
+
+        .vs-text { font-size: 35px; font-weight: 900; color: var(--gold-main); font-style: italic; text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
+        .stadium { font-size: 12px; color: var(--gold-main); margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="header"><h1>DUHOK SPORT CLUB</h1></div>
 
-<div class="nav-bar">
-    <span class="nav-item">SQUAD</span>
-    <span class="nav-item" style="border-bottom: 2px solid var(--gold);">MATCHES</span>
+<div class="nav-tabs">
+    <div class="tab">SQUAD</div>
+    <div class="tab active">MATCHES</div>
 </div>
 
 <div class="container">
     <div class="section-title">UPCOMING MATCHES</div>
 
-    <!-- Match Card 1 -->
+    <!-- Match 1 -->
     <div class="match-card">
-        <div class="match-info-top">
-            <span>ROUND (33) | 2026/05/05</span>
-            <span>PM 5:30</span>
-        </div>
-        <div class="teams-container">
-            <div class="team home">
+        <div class="match-info">ROUND (33) | 2026/05/05 | TUESDAY / سێشەمبە | PM 5:30</div>
+        <div class="teams-row">
+            <div class="team-left">
                 <span class="team-name">DUHOK</span>
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
             </div>
-            <div class="vs-box">VS</div>
-            <div class="team away">
-                <span class="team-name">NAFT MISSAN</span>
+            <div class="vs-text">VS</div>
+            <div class="team-right">
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo">
+                <span class="team-name">NAFT MISSAN</span>
             </div>
         </div>
         <div class="stadium">DUHOK STADIUM 📍</div>
     </div>
 
-    <!-- Match Card 2 (Inverted like image) -->
+    <!-- Match 2 -->
     <div class="match-card">
-        <div class="match-info-top">
-            <span>ROUND (34) | 2026/05/10</span>
-            <span>PM 5:30</span>
-        </div>
-        <div class="teams-container">
-            <div class="team home">
-                <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo">
+        <div class="match-info">ROUND (34) | 2026/05/10 | SUNDAY / ئێک شەمبە | PM 5:30</div>
+        <div class="teams-row">
+            <div class="team-left">
                 <span class="team-name">AL QASIM</span>
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo">
             </div>
-            <div class="vs-box">VS</div>
-            <div class="team away">
+            <div class="vs-text">VS</div>
+            <div class="team-right">
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
                 <span class="team-name">DUHOK</span>
             </div>
