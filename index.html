@@ -3,191 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DUHOK SC - PREMIUM</title>
     <style>
         :root { 
             --gold: #d4af37; 
-            --gold-light: #f1d592;
-            --dark-blue: #050a14;
-            --card-bg: rgba(10, 20, 40, 0.85);
+            --gold-gradient: linear-gradient(180deg, #f1d592, #d4af37);
+            --dark-bg: #050a14;
         }
         body { 
-            background: linear-gradient(to bottom, #101826, #050a14);
+            background-color: var(--dark-bg); 
             color: white; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif; 
             margin: 0; 
-            display: flex; 
-            flex-direction: column; 
+            padding: 0;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
-        
+
         /* Header وەک وێنەی */
         .header { 
             width: 100%; 
-            background: linear-gradient(180deg, var(--gold) 0%, #8a6d3b 100%);
-            padding: 30px 0; 
-            text-align: center; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            position: relative;
+            background: var(--gold-gradient);
+            padding: 20px 0; 
+            text-align: center;
+            border-bottom: 2px solid #8a6d3b;
         }
-        .header h1 { 
-            margin: 0; 
-            font-size: 28px; 
-            color: #050a14; 
-            text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
+        .header h1 { margin: 0; color: #000; font-size: 24px; font-weight: bold; }
 
-        .container { 
-            width: 100%; 
-            max-width: 450px; 
-            padding: 15px; 
-            box-sizing: border-box;
+        .nav-bar {
+            width: 100%;
+            background: #0a1428;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--gold);
         }
+        .nav-item { color: var(--gold); font-weight: bold; font-size: 14px; text-decoration: none; }
+
+        .container { width: 100%; max-width: 450px; padding: 15px; }
 
         .section-title { 
             text-align: center; 
-            font-size: 18px; 
-            margin: 20px 0; 
-            color: var(--gold);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* کارتا یاریێ ب باکگراوندێ یاریگەهێ */
-        .match-card { 
-            background-image: linear-gradient(rgba(5, 10, 20, 0.8), rgba(5, 10, 20, 0.8)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px; 
-            padding: 25px; 
-            margin-bottom: 20px; 
-            border: 2px solid var(--gold); 
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-        }
-
-        .match-header { 
-            color: var(--gold-light);
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .teams-row { 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-around; 
+            color: var(--gold); 
+            font-size: 16px; 
+            font-weight: bold; 
             margin: 20px 0;
+            text-transform: uppercase;
         }
 
-        .team-box { 
+        /* کارتا یاریێ رێک وەک وێنەی */
+        .match-card { 
+            border: 1px solid var(--gold); 
+            border-radius: 20px; 
+            padding: 20px; 
+            margin-bottom: 15px; 
+            background: rgba(10, 20, 40, 0.5);
+            position: relative;
+        }
+
+        .match-info-top { 
+            font-size: 11px; 
+            color: var(--gold); 
             display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            gap: 10px; 
-            width: 40%;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
 
-        .team-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--gold);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        .teams-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
         }
 
-        .team-logo { 
-            width: 70px; 
-            height: 70px; 
-            border-radius: 50%; 
-            background: white; 
-            padding: 5px;
-            border: 3px solid var(--gold);
-            box-shadow: 0 0 15px var(--gold);
-        }
+        .team { display: flex; align-items: center; gap: 10px; width: 40%; }
+        .team.home { justify-content: flex-start; flex-direction: row; } /* ناڤ پاشان لوگۆ */
+        .team.away { justify-content: flex-end; flex-direction: row-reverse; } /* لوگۆ پاشان ناڤ */
 
-        .vs-text { 
-            font-size: 32px; 
+        .team-name { color: var(--gold); font-weight: bold; font-size: 15px; }
+        .team-logo { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--gold); background: #fff; }
+
+        .vs-box { 
+            font-size: 28px; 
             font-weight: 900; 
-            color: var(--gold);
+            color: var(--gold); 
             font-style: italic;
-            text-shadow: 0 0 10px var(--gold);
+            text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
         }
 
         .stadium { 
-            font-size: 14px; 
-            color: #ccc; 
-            margin-top: 15px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .footer {
-            margin-top: auto;
-            padding: 30px;
+            font-size: 12px; 
+            color: var(--gold); 
+            margin-top: 10px; 
             text-align: center;
-            width: 100%;
-            background: rgba(0,0,0,0.5);
         }
-
-        .official-tag { color: var(--gold); font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>DUHOK SPORT CLUB</h1>
+<div class="header"><h1>DUHOK SPORT CLUB</h1></div>
+
+<div class="nav-bar">
+    <span class="nav-item">SQUAD</span>
+    <span class="nav-item" style="border-bottom: 2px solid var(--gold);">MATCHES</span>
 </div>
 
 <div class="container">
     <div class="section-title">UPCOMING MATCHES</div>
 
-    <!-- MATCH 1: NAFT MISSAN -->
+    <!-- Match Card 1 -->
     <div class="match-card">
-        <div class="match-header">ROUND (33) | 2026/05/05 | 5:30 PM</div>
-        <div class="teams-row">
-            <div class="team-box">
+        <div class="match-info-top">
+            <span>ROUND (33) | 2026/05/05</span>
+            <span>PM 5:30</span>
+        </div>
+        <div class="teams-container">
+            <div class="team home">
                 <span class="team-name">DUHOK</span>
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
             </div>
-            <div class="vs-text">VS</div>
-            <div class="team-box">
+            <div class="vs-box">VS</div>
+            <div class="team away">
                 <span class="team-name">NAFT MISSAN</span>
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo">
             </div>
         </div>
-        <div class="stadium">📍 DUHOK STADIUM</div>
+        <div class="stadium">DUHOK STADIUM 📍</div>
     </div>
 
-    <!-- MATCH 2: AL QASIM -->
+    <!-- Match Card 2 (Inverted like image) -->
     <div class="match-card">
-        <div class="match-header">ROUND (34) | 2026/05/10 | 5:30 PM</div>
-        <div class="teams-row">
-            <div class="team-box">
-                <span class="team-name">DUHOK</span>
-                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
-            </div>
-            <div class="vs-text">VS</div>
-            <div class="team-box">
-                <span class="team-name">AL QASIM</span>
+        <div class="match-info-top">
+            <span>ROUND (34) | 2026/05/10</span>
+            <span>PM 5:30</span>
+        </div>
+        <div class="teams-container">
+            <div class="team home">
                 <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo">
+                <span class="team-name">AL QASIM</span>
+            </div>
+            <div class="vs-box">VS</div>
+            <div class="team away">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
+                <span class="team-name">DUHOK</span>
             </div>
         </div>
-        <div class="stadium">📍 DUHOK STADIUM</div>
+        <div class="stadium">AL QASIM STADIUM 📍</div>
     </div>
-</div>
-
-<div class="footer">
-    <div class="official-tag">OFFICIAL DUHOK SC APP</div>
-    <div style="color: #888; font-size: 12px; margin-top: 5px;">TIK: duhok2008.sc</div>
 </div>
 
 </body>
