@@ -4,88 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        :root { 
-            --gold: #d4af37; 
-            --dark-blue: #050a14;
-            --card-bg: #0a1428;
-        }
-        body { 
-            background-color: var(--dark-blue); 
-            color: white; 
-            font-family: sans-serif; 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
+        body {
+            background-color: #050a14;
+            color: #d4af37;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
             align-items: center;
         }
-
-        /* Header وەک وێنەی */
-        .header { 
-            width: 100%; 
+        .header {
+            width: 100%;
             background: linear-gradient(180deg, #f1d592, #d4af37);
-            padding: 25px 0; 
+            padding: 20px 0;
             text-align: center;
             border-bottom: 2px solid #8a6d3b;
         }
-        .header h1 { margin: 0; color: #000; font-size: 22px; font-weight: bold; }
-
-        .nav-tabs {
+        .header h1 { margin: 0; color: #000; font-size: 24px; font-weight: bold; }
+        .nav-bar {
             width: 100%;
             background: #0a1428;
             display: flex;
-            border-bottom: 2px solid var(--gold);
+            justify-content: space-around;
+            padding: 15px 0;
+            border-bottom: 2px solid #d4af37;
         }
-        .tab { flex: 1; text-align: center; padding: 15px; color: var(--gold); font-weight: bold; }
-        .tab.active { border-bottom: 4px solid var(--gold); }
-
-        .container { width: 100%; max-width: 450px; padding: 15px; }
-        .section-title { text-align: center; color: var(--gold); font-size: 16px; margin: 15px 0; font-weight: bold; }
-
-        /* کارتا یاریێ ب تەمامی وەک وێنەی */
-        .match-card { 
-            border: 1px solid var(--gold); 
-            border-radius: 20px; 
-            padding: 20px; 
-            margin-bottom: 20px; 
-            background: rgba(10, 20, 40, 0.4);
-            text-align: center;
-        }
-
-        .match-header-info { 
-            font-size: 11px; 
-            color: var(--gold); 
+        .nav-item { color: #d4af37; font-weight: bold; font-size: 14px; }
+        .active-tab { border-bottom: 3px solid #d4af37; padding-bottom: 5px; }
+        .container { width: 100%; max-width: 450px; padding: 15px; box-sizing: border-box; }
+        .section-title { text-align: center; font-size: 16px; margin: 20px 0; font-weight: bold; }
+        .match-card {
+            border: 1px solid #d4af37;
+            border-radius: 20px;
+            padding: 15px;
             margin-bottom: 15px;
-            font-weight: bold;
+            background: rgba(10, 20, 40, 0.5);
+        }
+        .match-header {
             display: flex;
             justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 5px;
         }
-
-        .teams-container {
+        .teams-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 15px 0;
+            margin: 10px 0;
         }
-
-        /* لایێ چەپێ: ناڤ + لوگۆ (وەک وێنەی) */
-        .team-left { display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; }
-        /* لایێ ڕاستێ: لوگۆ + ناڤ (وەک وێنەی) */
-        .team-right { display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-start; }
-
-        .team-name { color: var(--gold); font-weight: bold; font-size: 14px; }
-        .team-logo { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--gold); background: #fff; padding: 2px; }
-
-        .vs-text { font-size: 30px; font-weight: 900; color: var(--gold); font-style: italic; }
-        .stadium-text { font-size: 12px; color: var(--gold); margin-top: 10px; }
+        .team { display: flex; align-items: center; gap: 8px; width: 40%; }
+        .team-left { justify-content: flex-end; }
+        .team-right { justify-content: flex-start; }
+        .team-logo { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #d4af37; background: #fff; }
+        .team-name { font-weight: bold; font-size: 14px; }
+        .vs-text { font-size: 30px; font-weight: 900; font-style: italic; }
+        .stadium { font-size: 12px; text-align: center; margin-top: 10px; }
     </style>
 </head>
 <body>
 
 <div class="header"><h1>DUHOK SPORT CLUB</h1></div>
 
-<div class="nav-tabs">
-    <div class="tab">SQUAD</div>
-    <div class="tab active">MATCHES</div>
+<div class="nav-bar">
+    <span class="nav-item">SQUAD</span>
+    <span class="nav-item active-tab">MATCHES</span>
 </div>
 
 <div class="container">
@@ -93,42 +78,42 @@
 
     <!-- Match 1 -->
     <div class="match-card">
-        <div class="match-header-info">
+        <div class="match-header">
             <span>ROUND (33) | 2026/05/05 | TUESDAY</span>
             <span>PM 5:30</span>
         </div>
-        <div class="teams-container">
-            <div class="team-left">
+        <div class="teams-row">
+            <div class="team team-left">
                 <span class="team-name">DUHOK</span>
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
             </div>
             <div class="vs-text">VS</div>
-            <div class="team-right">
+            <div class="team team-right">
                 <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="team-logo">
                 <span class="team-name">NAFT MISSAN</span>
             </div>
         </div>
-        <div class="stadium-text">DUHOK STADIUM 📍</div>
+        <div class="stadium">DUHOK STADIUM 📍</div>
     </div>
 
-    <!-- Match 2 (Inverted Logos like image) -->
+    <!-- Match 2 -->
     <div class="match-card">
-        <div class="match-header-info">
+        <div class="match-header">
             <span>ROUND (34) | 2026/05/10 | SUNDAY</span>
             <span>PM 5:30</span>
         </div>
-        <div class="teams-container">
-            <div class="team-left">
+        <div class="teams-row">
+            <div class="team team-left">
                 <span class="team-name">AL QASIM</span>
                 <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Al-Qasim_SC_logo.png" class="team-logo">
             </div>
             <div class="vs-text">VS</div>
-            <div class="team-right">
+            <div class="team team-right">
                 <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="team-logo">
                 <span class="team-name">DUHOK</span>
             </div>
         </div>
-        <div class="stadium-text">AL QASIM STADIUM 📍</div>
+        <div class="stadium">AL QASIM STADIUM 📍</div>
     </div>
 </div>
 
