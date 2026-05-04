@@ -3,212 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Duhok SC - Official</title>
     <style>
-        :root {
-            --dsc-blue: #050a14;
-            --dsc-gold: #d4af37;
-            --dsc-card-bg: rgba(10, 20, 40, 0.7);
-        }
-
         body {
-            background-color: var(--dsc-blue);
-            color: var(--dsc-gold);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050a14;
+            color: #d4af37;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden; /* ڕێگریکردن لە چوون بۆ ڕەخان */
-            -webkit-font-smoothing: antialiased;
+            /* قفڵکردنا ڕەخان */
+            overflow-x: hidden;
+            width: 100vw;
+            position: fixed;
+            height: 100%;
         }
 
-        /* Header - دیزاینی سادە بۆ جێگیرکردنی دوکمەکان */
         .header {
             width: 100%;
-            background-color: var(--dsc-blue);
+            background: linear-gradient(180deg, #f1d592, #d4af37);
             padding: 15px 0;
             text-align: center;
-            border-bottom: 2px solid var(--dsc-gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-bottom: 2px solid #8a6d3b;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        .header h1 {
-            margin: 0;
-            color: var(--dsc-gold);
-            font-size: 20px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
+        .header h1 { margin: 0; color: #000; font-size: 18px; font-weight: bold; letter-spacing: 1px; }
 
-        /* دوکمەکانى سەرەوە */
-        .header-buttons {
+        .nav-tabs {
             display: flex;
-            justify-content: center;
-            gap: 15px;
             width: 100%;
-            padding: 0 10px;
-            box-sizing: border-box;
+            background: #0a1428;
+            border-bottom: 1px solid #d4af37;
         }
 
-        .header-btn {
-            background-color: transparent;
-            color: var(--dsc-gold);
-            border: 1px solid var(--dsc-gold);
-            border-radius: 20px;
-            padding: 8px 18px;
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            color: #d4af37;
+            background: none;
+            border: none;
             font-weight: bold;
-            font-size: 13px;
-            text-transform: uppercase;
             cursor: pointer;
-            transition: 0.3s;
+            font-size: 14px;
         }
 
-        .header-btn.active {
-            background-color: var(--dsc-gold);
-            color: #000;
-        }
-
-        .header-btn:hover:not(.active) {
-            background-color: rgba(212, 175, 55, 0.1);
-        }
+        .tab-btn.active { background: rgba(212, 175, 55, 0.1); border-bottom: 3px solid #d4af37; }
 
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 450px;
             padding: 20px 10px;
             box-sizing: border-box;
-            overflow: hidden; /* چەسپاندنی ناوەڕۆک */
+            overflow-y: auto;
+            height: calc(100vh - 120px);
         }
 
         .match-card {
-            background-color: var(--dsc-card-bg);
-            border: 1px solid var(--dsc-gold);
-            border-radius: 20px;
-            padding: 20px 10px;
+            border: 1px solid #d4af37;
+            border-radius: 25px;
+            padding: 25px 10px;
+            background: rgba(10, 20, 40, 0.6);
             margin-bottom: 20px;
-            text-align: center;
-            position: relative;
-            box-sizing: border-box;
         }
 
         .match-info-top {
             font-size: 11px;
-            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            padding-bottom: 10px;
         }
 
         .teams-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 5px;
         }
 
-        .vs-container {
-            display: flex;
-            align-items: center;
-            gap: 6px; /* ناڤ گەلەک نێزیکی VS نە */
-        }
+        .vs-box { display: flex; align-items: center; gap: 8px; }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--dsc-gold);
-            background: white;
-            object-fit: cover;
-            flex-shrink: 0;
+            width: 48px; height: 48px; border-radius: 50%;
+            border: 2px solid #d4af37; background: white;
         }
 
-        .name-text {
-            font-weight: bold;
-            font-size: 13px;
-            white-space: nowrap; /* ڕێگریکردن لە شکان */
-        }
+        .name-text { font-weight: bold; font-size: 13px; }
 
-        .vs-text {
-            font-size: 32px;
-            font-weight: 900;
-            font-style: italic;
-            color: var(--dsc-gold);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-        }
+        .vs-text { font-size: 34px; font-weight: 900; font-style: italic; }
 
-        .stadium {
-            margin-top: 15px;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        /* ستایل بۆ بەشی SQUAD (COMING SOON) */
-        #squad-content {
-            display: none;
+        /* دوکمەیا تیکتۆکێ */
+        .tiktok-btn {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            background: #000;
+            color: #fff;
             text-align: center;
-            padding: 50px 20px;
+            padding: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #fff;
+            font-size: 14px;
         }
 
-        #squad-content .coming-soon {
-            font-size: 30px;
-            font-weight: 900;
-            opacity: 0.5;
-            font-style: italic;
-        }
-
+        .hidden { display: none; }
+        .soon-section { text-align: center; padding: 60px 20px; }
+        .soon-text { font-size: 30px; font-weight: 900; opacity: 0.4; font-style: italic; }
     </style>
 </head>
 <body>
 
 <div class="header">
     <h1>DUHOK SPORT CLUB</h1>
-    <div class="header-buttons">
-        <button id="matchesBtn" class="header-btn active" onclick="showMatches()">MATCHES</button>
-        <button id="squadBtn" class="header-btn" onclick="showSquad()">SQUAD</button>
-    </div>
 </div>
 
-<div class="container" id="matches-content">
+<div class="nav-tabs">
+    <button class="tab-btn active" id="mBtn" onclick="show('matches')">MATCHES</button>
+    <button class="tab-btn" id="sBtn" onclick="show('squad')">SQUAD</button>
+</div>
+
+<div class="container" id="matches-area">
     <div class="match-card">
         <div class="match-info-top">ROUND (33) | 2026/05/05 | PM 5:30</div>
         <div class="teams-row">
             <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
-            <div class="vs-container">
+            <div class="vs-box">
                 <span class="name-text">NAFT MISSAN</span>
                 <div class="vs-text">VS</div>
                 <span class="name-text">DUHOK</span>
             </div>
             <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
         </div>
-        <div class="stadium">DUHOK STADIUM 📍</div>
+        <div style="text-align:center; margin-top:15px; font-size:12px;">DUHOK STADIUM 📍</div>
+    </div>
+
+    <!-- ئەگەر دڤێت لینکێ تیکتۆکا خۆ لێرە دانە -->
+    <a href="https://www.tiktok.com/@NAVE_TE" class="tiktok-btn">MY TIKTOK 🎬</a>
+</div>
+
+<div class="container hidden" id="squad-area">
+    <div class="soon-section">
+        <div class="soon-text">COMING SOON...</div>
+        <p style="color: #888; font-size: 14px;">لیستا یاریزانان دێ ل نێزیک هێتە بەرهەڤکرن</p>
     </div>
 </div>
 
-<div class="container" id="squad-content">
-    <div class="coming-soon">COMING SOON...</div>
-    <p style="color:#aaa; margin-top:10px;">لیستی یاریزانان دێ ل نێزیک لێرە دیار بیت</p>
-</div>
-
 <script>
-    function showMatches() {
-        document.getElementById('matches-content').style.display = 'block';
-        document.getElementById('squad-content').style.display = 'none';
-        document.getElementById('matchesBtn').classList.add('active');
-        document.getElementById('squadBtn').classList.remove('active');
-    }
-
-    function showSquad() {
-        document.getElementById('matches-content').style.display = 'none';
-        document.getElementById('squad-content').style.display = 'block';
-        document.getElementById('squadBtn').classList.add('active');
-        document.getElementById('matchesBtn').classList.remove('active');
+    function show(type) {
+        if(type === 'matches') {
+            document.getElementById('matches-area').classList.remove('hidden');
+            document.getElementById('squad-area').classList.add('hidden');
+            document.getElementById('mBtn').classList.add('active');
+            document.getElementById('sBtn').classList.remove('active');
+        } else {
+            document.getElementById('matches-area').classList.add('hidden');
+            document.getElementById('squad-area').classList.remove('hidden');
+            document.getElementById('sBtn').classList.add('active');
+            document.getElementById('mBtn').classList.remove('active');
+        }
     }
 </script>
 
