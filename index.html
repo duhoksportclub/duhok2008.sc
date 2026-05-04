@@ -2,146 +2,215 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        :root {
+            --dsc-blue: #050a14;
+            --dsc-gold: #d4af37;
+            --dsc-card-bg: rgba(10, 20, 40, 0.7);
+        }
+
         body {
-            background-color: #050a14;
-            color: #d4af37;
-            font-family: sans-serif;
+            background-color: var(--dsc-blue);
+            color: var(--dsc-gold);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* ڕێگریکردن لە چوون بۆ ڕەخان */
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
+        /* Header - دیزاینی سادە بۆ جێگیرکردنی دوکمەکان */
         .header {
             width: 100%;
-            background: linear-gradient(180deg, #f1d592, #d4af37);
+            background-color: var(--dsc-blue);
             padding: 15px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-bottom: 2px solid #8a6d3b;
+            text-align: center;
+            border-bottom: 2px solid var(--dsc-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .header img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #d4af37; background: white; }
-        .header h1 { margin: 0; color: #000; font-size: 20px; font-weight: bold; }
 
-        .nav-bar {
+        .header h1 {
+            margin: 0;
+            color: var(--dsc-gold);
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* دوکمەکانى سەرەوە */
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             width: 100%;
-            background: #0a1428;
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            border-bottom: 2px solid #d4af37;
+            padding: 0 10px;
+            box-sizing: border-box;
         }
 
-        .container { width: 100%; max-width: 450px; padding: 15px; }
+        .header-btn {
+            background-color: transparent;
+            color: var(--dsc-gold);
+            border: 1px solid var(--dsc-gold);
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-        /* کارتا یاریێ */
+        .header-btn.active {
+            background-color: var(--dsc-gold);
+            color: #000;
+        }
+
+        .header-btn:hover:not(.active) {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            overflow: hidden; /* چەسپاندنی ناوەڕۆک */
+        }
+
         .match-card {
-            border: 1px solid #d4af37;
-            border-radius: 25px;
-            padding: 25px 15px;
+            background-color: var(--dsc-card-bg);
+            border: 1px solid var(--dsc-gold);
+            border-radius: 20px;
+            padding: 20px 10px;
             margin-bottom: 20px;
-            background: rgba(10, 20, 40, 0.5);
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
         }
 
         .match-info-top {
             font-size: 11px;
-            text-align: center;
-            margin-bottom: 20px;
+            font-weight: bold;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
-        .teams-container {
+        .teams-row {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
+            justify-content: space-between;
+            padding: 0 5px;
         }
 
-        /* ستایلێ تیمان: لوگۆ ل کەناری و ناڤ ل ڕەخ VS */
-        .team-box { 
-            display: flex; 
-            align-items: center; 
-            width: 45%;
-        }
-
-        /* لایێ چەپێ: لوگۆ --- ناڤ (نێزیکی VS) */
-        .left-side { 
-            flex-direction: row; 
-            justify-content: flex-start;
-        }
-
-        /* لایێ ڕاستێ: ناڤ (نێزیکی VS) --- لوگۆ */
-        .right-side { 
-            flex-direction: row-reverse; 
-            justify-content: flex-start;
+        .vs-container {
+            display: flex;
+            align-items: center;
+            gap: 6px; /* ناڤ گەلەک نێزیکی VS نە */
         }
 
         .logo-img {
-            width: 48px;
-            height: 48px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            border: 2px solid #d4af37;
+            border: 2px solid var(--dsc-gold);
             background: white;
+            object-fit: cover;
             flex-shrink: 0;
         }
 
         .name-text {
             font-weight: bold;
-            font-size: 14px;
-            margin: 0 8px; /* نێزیککرنا ناڤی ژ لوگۆی */
+            font-size: 13px;
+            white-space: nowrap; /* ڕێگریکردن لە شکان */
         }
 
         .vs-text {
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 900;
             font-style: italic;
-            color: #d4af37;
+            color: var(--dsc-gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
         }
 
-        .stadium { text-align: center; margin-top: 15px; font-size: 12px; font-weight: bold; }
+        .stadium {
+            margin-top: 15px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* ستایل بۆ بەشی SQUAD (COMING SOON) */
+        #squad-content {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #squad-content .coming-soon {
+            font-size: 30px;
+            font-weight: 900;
+            opacity: 0.5;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png">
     <h1>DUHOK SPORT CLUB</h1>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_x-vXWv_z3Z6h7iO8yQyE9v1X3Z5f6g7h8i">
+    <div class="header-buttons">
+        <button id="matchesBtn" class="header-btn active" onclick="showMatches()">MATCHES</button>
+        <button id="squadBtn" class="header-btn" onclick="showSquad()">SQUAD</button>
+    </div>
 </div>
 
-<div class="nav-bar">
-    <span style="color:#d4af37; font-weight:bold;">MATCHES</span>
-    <span style="color:#d4af37; font-weight:bold;">SQUAD</span>
-</div>
-
-<div class="container">
+<div class="container" id="matches-content">
     <div class="match-card">
         <div class="match-info-top">ROUND (33) | 2026/05/05 | PM 5:30</div>
-        
-        <div class="teams-container">
-            <!-- تیمێ چەپێ: لوگۆ ل کەناری، ناڤ ل ڕەخ VS -->
-            <div class="team-box left-side">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
+        <div class="teams-row">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img">
+            <div class="vs-container">
                 <span class="name-text">NAFT MISSAN</span>
-            </div>
-
-            <div class="vs-text">VS</div>
-
-            <!-- تیمێ ڕاستێ: ناڤ ل ڕەخ VS، لوگۆ ل کەناری -->
-            <div class="team-box right-side">
-                <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
+                <div class="vs-text">VS</div>
                 <span class="name-text">DUHOK</span>
             </div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img">
         </div>
-
         <div class="stadium">DUHOK STADIUM 📍</div>
     </div>
 </div>
+
+<div class="container" id="squad-content">
+    <div class="coming-soon">COMING SOON...</div>
+    <p style="color:#aaa; margin-top:10px;">لیستی یاریزانان دێ ل نێزیک لێرە دیار بیت</p>
+</div>
+
+<script>
+    function showMatches() {
+        document.getElementById('matches-content').style.display = 'block';
+        document.getElementById('squad-content').style.display = 'none';
+        document.getElementById('matchesBtn').classList.add('active');
+        document.getElementById('squadBtn').classList.remove('active');
+    }
+
+    function showSquad() {
+        document.getElementById('matches-content').style.display = 'none';
+        document.getElementById('squad-content').style.display = 'block';
+        document.getElementById('squadBtn').classList.add('active');
+        document.getElementById('matchesBtn').classList.remove('active');
+    }
+</script>
 
 </body>
 </html>
