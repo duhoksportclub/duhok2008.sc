@@ -2,143 +2,208 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaneya Dihokê ya Werzişî | Duhok SC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+        :root {
+            --yellow: #FFD700;
+            --blue: #0f2042;
+            --light-blue: #1e3a6d;
+            --white: #ffffff;
+            --gray: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
         body {
-            background-color: #050a14;
-            color: #d4af37;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0; padding: 0;
-            display: flex; flex-direction: column; align-items: center;
-            overflow-x: hidden; width: 100vw;
+            background-color: var(--blue);
+            color: var(--white);
+            text-align: center;
         }
 
-        /* باکگراوندێ سەرەکی وەک وێنەیێ تە */
-        .header {
-            width: 100%;
-            height: 180px;
+        /* Header / Serûpela Malperê */
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--light-blue));
+            padding: 30px 20px;
+            border-bottom: 4px solid var(--yellow);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: var(--yellow);
+            border-radius: 50%;
+            margin: 0 auto 15px;
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            border-bottom: 2px solid #d4af37;
-            position: relative;
-            background: linear-gradient(to bottom, rgba(5, 10, 20, 0.3), #050a14), 
-                        url('https://pbs.twimg.com/media/GrGVejLWUAAiwNv.jpg') left center / 50% 100% no-repeat,
-                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu9KzknhiVsImceIPQNnBd7YmAWl7HFO_-IEQFSnFY1w&s') right center / 50% 100% no-repeat;
-            background-color: #0a1428;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--blue);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
         }
 
-        .side-font {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 45px;
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 2px 2px 5px #000;
-            z-index: 5;
+        header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: var(--yellow);
         }
 
-        .header h1 { 
-            z-index: 5; margin: 0; color: #d4af37; font-size: 18px; font-weight: 900;
-            text-align: center; text-shadow: 2px 2px 10px #000; line-height: 1.1;
+        header p {
+            font-size: 14px;
+            opacity: 0.8;
         }
 
-        .nav-tabs { 
-            display: flex; width: 100%; background: #0a1428; 
-            border-bottom: 1px solid #d4af37; position: sticky; top: 0; z-index: 10; 
-            flex-direction: row-reverse; /* بۆ هندێ وەک وێنەی لایێ چەپێ دەستپێبکەت */
-        }
-        
-        .tab-btn { flex: 1; padding: 15px 5px; color: #d4af37; background: none; border: none; font-weight: bold; font-size: 10px; text-transform: uppercase; }
-        .tab-btn.active { border-bottom: 3px solid #d4af37; background: rgba(212, 175, 55, 0.1); color: #fff; }
-
-        .container { width: 100%; max-width: 450px; padding: 20px 15px; box-sizing: border-box; }
-        
-        /* ستایلێ یاریان وەک یێ تە د بازنێ سوور دا کێشای */
-        .match-card { 
-            border: 2px solid #d4af37; 
-            border-radius: 25px; 
-            padding: 20px 10px; 
-            background: rgba(10, 20, 40, 0.6); 
-            margin-bottom: 20px; 
-            box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1);
+        /* Navenda Bişkokan (Buttons) */
+        .links-container {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        .teams-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
-        .team-box { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        
-        .logo-img { 
-            width: 65px; height: 65px; border-radius: 50%; 
-            border: 1px solid #d4af37; background: #fff; padding: 2px;
-            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        .main-btn {
+            background: linear-gradient(90deg, var(--light-blue), #254b8c);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
         }
 
-        .vs-text { font-size: 35px; font-weight: 900; color: #d4af37; text-shadow: 1px 1px 5px #000; }
-        .team-name { font-weight: 800; font-size: 11px; color: #fff; margin-top: 10px; text-align: center; letter-spacing: 0.5px; }
-        
-        .match-status { text-align:center; font-size:9px; color: #aaa; margin-bottom: 10px; letter-spacing: 1px; }
-        .league-label { 
-            text-align:center; margin-top:15px; font-size:13px; font-weight:bold; 
-            color: #d4af37; letter-spacing: 1px; padding-top: 10px;
+        .main-btn:hover {
+            border-color: var(--yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.2);
+            background: var(--yellow);
+            color: var(--blue);
         }
 
-        .tiktok-btn { display: flex; align-items: center; justify-content: center; width: 85%; margin: 20px auto; background: #000; color: #fff; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #fff; font-size: 12px; }
+        .main-btn i {
+            font-size: 20px;
+        }
+
+        /* Beşê Lîstik û Yariyan */
+        .match-section {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: var(--yellow);
+            margin-bottom: 15px;
+            text-align: right;
+            border-right: 3px solid var(--yellow);
+            padding-right: 10px;
+        }
+
+        .match-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .team {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .vs {
+            background-color: var(--yellow);
+            color: var(--blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5px;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <div class="side-font">93</div>
-    <h1>DUHOK<br>SPORT CLUB</h1>
-    <div class="side-font">34</div>
-</div>
-
-<div class="nav-tabs">
-    <button class="tab-btn active">MATCHES</button>
-    <button class="tab-btn">VIDEOS</button>
-    <button class="tab-btn">SQUAD</button>
-    <button class="tab-btn">COMMUNITY</button>
-</div>
-
-<div class="container">
-    <!-- یاریێن تە داخوازکرین ب ڕێزبەندی -->
-    
-    <!-- DUHOK VS NAFT MISSAN -->
-    <div class="match-card">
-        <div class="match-status">UPCOMING MATCH</div>
-        <div class="teams-row">
-            <div class="team-box"><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img"><div class="team-name">DUHOK</div></div>
-            <div class="vs-text">VS</div>
-            <div class="team-box"><img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Naft_Maysan_logo.png" class="logo-img"><div class="team-name">NAFT MISSAN</div></div>
+    <header>
+        <div class="logo">
+            <i class="fas fa-trophy"></i>
         </div>
-        <div class="league-label">IRAQ STARS LEAGUE</div>
+        <h1>Duhok Sport Club</h1>
+        <p>Yaneya Çiyayan - Malpera Fermî ya Yariyan</p>
+    </header>
+
+    <div class="links-container">
+        
+        <a href="https://www.facebook.com/" target="_blank" class="main-btn">
+            <i class="fab fa-facebook"></i>
+            <span>Rûpela Facebookê</span>
+            <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank" class="main-btn">
+            <i class="fab fa-instagram"></i>
+            <span>Hesabê Instagramê</span>
+            <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <a href="#" class="main-btn">
+            <i class="fas fa-tv"></i>
+            <span>Weşana Zindî (Live)</span>
+            <i class="fas fa-chevron-left"></i>
+        </a>
+
+        <a href="#" class="main-btn">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Xula Iraqê / Cedwel</span>
+            <i class="fas fa-chevron-left"></i>
+        </a>
+
     </div>
 
-    <!-- DUHOK VS AL QASIM -->
-    <div class="match-card">
-        <div class="match-status">UPCOMING MATCH</div>
-        <div class="teams-row">
-            <div class="team-box"><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img"><div class="team-name">DUHOK</div></div>
-            <div class="vs-text">VS</div>
-            <div class="team-box"><div class="logo-img" style="display:flex; align-items:center; justify-content:center; background:#1a3a5a; color:#fff; font-size:10px;">QASIM</div><div class="team-name">AL QASIM</div></div>
+    <div class="match-section">
+        <div class="section-title">Yariyên Hatî Medandin / Yên Paşerojê</div>
+        
+        <div class="match-card">
+            <div class="team">Duhok SC</div>
+            <span class="vs">VS</span>
+            <div class="team">Zaxho SC</div>
         </div>
-        <div class="league-label">IRAQ STARS LEAGUE</div>
+
+        <div class="match-card">
+            <div class="team">Erbil SC</div>
+            <span class="vs">VS</span>
+            <div class="team">Duhok SC</div>
+        </div>
     </div>
 
-    <!-- MOSUL VS DUHOK -->
-    <div class="match-card">
-        <div class="match-status">UPCOMING MATCH</div>
-        <div class="teams-row">
-            <div class="team-box"><div class="logo-img" style="display:flex; align-items:center; justify-content:center; background:#1a3a5a; color:#fff; font-size:10px;">MOSUL</div><div class="team-name">MOSUL SC</div></div>
-            <div class="vs-text">VS</div>
-            <div class="team-box"><img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Duhok_SC_logo.png" class="logo-img"><div class="team-name">DUHOK</div></div>
-        </div>
-        <div class="league-label">IRAQ STARS LEAGUE</div>
-    </div>
-
-    <a href="https://www.tiktok.com/@duhok2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK</a>
-</div>
+    <footer>
+        <p>&copy; 2026 Duhok SC Fan Page. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
