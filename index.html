@@ -37,7 +37,7 @@
             padding-bottom: 40px;
         }
 
-        /* Top Header Area */
+        /* Top Header Area with Images */
         .top-header {
             display: flex;
             justify-content: space-between;
@@ -47,21 +47,19 @@
             padding: 0 10px;
         }
 
-        .score-num {
-            font-size: 42px;
-            font-weight: 800;
-            color: var(--white);
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        .header-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
         }
 
         .club-title {
             text-align: center;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             letter-spacing: 1px;
             color: var(--gold);
-            max-width: 150px;
             line-height: 1.3;
         }
 
@@ -98,26 +96,27 @@
             border: 2px solid var(--gold);
             border-radius: 24px;
             background-color: var(--card-bg);
-            padding: 30px 20px;
+            padding: 40px 20px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
 
-        .round-info {
-            font-size: 11px;
-            color: var(--gray);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        .cup-info {
+            font-size: 13px;
+            color: var(--gold);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
-        /* Cleaned Match Section (Only placeholders, matches removed as requested) */
         .empty-zone {
-            padding: 40px 0;
-            font-size: 14px;
-            color: var(--gray);
-            font-style: italic;
+            font-size: 15px;
+            color: var(--white);
+            font-weight: 500;
+            margin: 20px 0;
         }
 
         /* Bottom Button */
@@ -151,9 +150,11 @@
     <div class="wrapper">
         
         <div class="top-header">
-            <div class="score-num">93</div>
+            <img class="header-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iraq_FA_logo.svg/1200px-Iraq_FA_logo.svg.png" alt="Iraq Cup">
+            
             <div class="club-title">DUHOK<br>SPORT CLUB</div>
-            <div class="score-num">34</div>
+            
+            <img class="header-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Duhok_SC_logo.svg/1200px-Duhok_SC_logo.svg.png" alt="Duhok SC">
         </div>
 
         <div class="nav-tabs">
@@ -164,10 +165,13 @@
         </div>
 
         <div class="match-container">
-            <div class="round-info">Duhok SC Hub</div>
             
             <div class="empty-zone">
                 Yariyên نوو دێ ل ڤێرێ ل هێنە دانان
+            </div>
+
+            <div class="cup-info">
+                <i class="fas fa-trophy"></i> Iraq Cup & Gulf Cup
             </div>
             
         </div>
