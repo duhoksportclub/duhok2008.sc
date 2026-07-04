@@ -15,6 +15,7 @@
             overflow-x: hidden; width: 100vw;
         }
 
+        /* باکگراوندێ سەرەکی یێ بەروڤاژیکری */
         .header {
             width: 100%;
             height: 180px;
@@ -24,8 +25,8 @@
             border-bottom: 2px solid #d4af37;
             position: relative;
             background: linear-gradient(to bottom, rgba(5, 10, 20, 0.3), #050a14), 
-                        url('https://pbs.twimg.com/media/GrGVejLWUAAiwNv.jpg') left center / 50% 100% no-repeat,
-                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu9KzknhiVsImceIPQNnBd7YmAWl7HFO_-IEQFSnFY1w&s') right center / 50% 100% no-repeat;
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu9KzknhiVsImceIPQNnBd7YmAWl7HFO_-IEQFSnFY1w&s') left center / 50% 100% no-repeat,
+                        url('https://pbs.twimg.com/media/GrGVejLWUAAiwNv.jpg') right center / 50% 100% no-repeat;
             background-color: #0a1428;
         }
 
@@ -48,25 +49,26 @@
             border-bottom: 1px solid #d4af37; position: sticky; top: 0; z-index: 10; 
         }
         
-        .tab-btn { flex: 1; padding: 15px 5px; color: #d4af37; background: none; border: none; font-weight: bold; font-size: 10px; text-transform: uppercase; }
+        .tab-btn { flex: 1; padding: 15px 5px; color: #d4af37; background: none; border: none; font-weight: bold; font-size: 10px; text-transform: uppercase; cursor: pointer; }
         .tab-btn.active { border-bottom: 3px solid #d4af37; background: rgba(212, 175, 55, 0.1); color: #fff; }
 
         .container { width: 100%; max-width: 450px; padding: 20px 15px; box-sizing: border-box; }
         
-        .match-card { 
+        .card-section { 
             border: 2px solid #d4af37; 
             border-radius: 25px; 
-            padding: 20px 10px; 
+            padding: 20px 15px; 
             background: rgba(10, 20, 40, 0.6); 
             margin-bottom: 20px; 
         }
 
+        /* لایێ یاریێ */
         .teams-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
         .team-box { flex: 1; display: flex; flex-direction: column; align-items: center; }
         
         .logo-img { 
             width: 65px; height: 65px; border-radius: 50%; 
-            border: 1px solid #d4af37; background: #fff; padding: 2px;
+            border: 2px solid #d4af37; background: #fff; padding: 2px;
             object-fit: contain;
         }
 
@@ -77,27 +79,49 @@
         .league-label { text-align:center; margin-top:15px; font-size:13px; font-weight:bold; color: #d4af37; padding-top: 10px; }
         .match-date { text-align:center; font-size:11px; color: #aaa; margin-top: 5px; font-weight: bold; }
 
-        .tiktok-btn { display: flex; align-items: center; justify-content: center; width: 85%; margin: 20px auto; background: #000; color: #fff; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 1px solid #fff; }
+        /* پشکا سکوادی */
+        .squad-title { font-size: 16px; font-weight: bold; color: #fff; border-bottom: 1px solid #d4af37; padding-bottom: 5px; margin-top: 15px; margin-bottom: 10px; }
+        .player-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 12px; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        .player-name { color: #fff; font-weight: bold; }
+        .player-status { color: #aaa; font-size: 11px; }
+        .new-badge { background: #ff4d4d; color: #fff; padding: 1px 5px; border-radius: 4px; font-size: 9px; font-weight: bold; }
+
+        /* دوکما لایێ خوارێ یێ بەروڤاژیکری */
+        .tiktok-btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 85%; 
+            margin: 20px auto; 
+            background: #000; 
+            color: #fff; 
+            padding: 12px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 1px solid #fff;
+            flex-direction: row-reverse;
+        }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="side-font">93</div>
-    <h1>DUHOK<br>SPORT CLUB</h1>
     <div class="side-font">34</div>
+    <h1>DUHOK<br>SPORT CLUB</h1>
+    <div class="side-font">93</div>
 </div>
 
 <div class="nav-tabs">
     <button class="tab-btn">COMMUNITY</button>
-    <button class="tab-btn">SQUAD</button>
+    <button class="tab-btn active">SQUAD & MATCHES</button>
     <button class="tab-btn">VIDEOS</button>
-    <button class="tab-btn active">MATCHES</button>
 </div>
 
 <div class="container">
     
-    <div class="match-card">
+    <!-- ١. بەشێ یاریێ (MATCH) -->
+    <div class="card-section">
         <div class="match-status">GULF SUPER CUP</div>
         <div class="teams-row">
             <!-- ئەلڕەیان ل لایێ ڕاستێ -->
@@ -108,7 +132,7 @@
             
             <div class="vs-text">VS</div>
             
-            <!-- دهۆک ل لایێ چەپێ دگەل لۆگۆیێ نوو یێ د وێنەیێ image_5.png دا -->
+            <!-- دهۆک ل لایێ چەپێ دگەل لۆگۆیێ نوو -->
             <div class="team-box">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghf96Z4Yw2b-4K5g5V-vLwLoxk_Pcl38j7y6L-F-yY8f6r9g8vP7m_K86MW_F-i9YmAWl7HFO_-IEQFSnFY1w/s1600/Duhok_New_Logo.png" class="logo-img">
                 <div class="team-name">DUHOK SC</div>
@@ -116,6 +140,50 @@
         </div>
         <div class="league-label">CHAMPIONSHIP MATCH</div>
         <div class="match-date">13 / 08 / 2026</div>
+    </div>
+
+    <!-- ٢. بەشێ پێکهاتەی و کادری (SQUAD) -->
+    <div class="card-section">
+        <div class="squad-title">ڕاهێنەر (HEAD COACH)</div>
+        <div class="player-row">
+            <span class="player-name">یەحیا گوڵموحەمەدی (Yahya Golmohammadi)</span>
+            <span class="player-status" style="color:#d4af37;">فەرمی / نوو</span>
+        </div>
+
+        <div class="squad-title">گرێبەستێن نوو (NEW SIGNINGS)</div>
+        <div class="player-row">
+            <span class="player-name">سینا ئەسەدەبەیگی (Sina Asadbeigi)</span>
+            <span class="new-badge">NEW</span>
+        </div>
+        <div class="player-row">
+            <span class="player-name">سەفا هادی (Safaa Hadi)</span>
+            <span class="new-badge">NEW</span>
+        </div>
+        <div class="player-row">
+            <span class="player-name">کومێل ئەلڕەکابی (Kumel Al-Rekabe)</span>
+            <span class="new-badge">NEW</span>
+        </div>
+        <div class="player-row">
+            <span class="player-name">موهەند جیهامز (Mohanad Jeahze)</span>
+            <span class="new-badge">NEW</span>
+        </div>
+        <div class="player-row">
+            <span class="player-name">ڕەزا مەجید (Reda Majji)</span>
+            <span class="new-badge">NEW</span>
+        </div>
+
+        <div class="squad-title">یاریزانێن سەرەکی یێن ماین (REMAINING)</div>
+        <div class="player-row"><span class="player-name">سیامەند عەگید (Siyaband Ageed)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">بەیار ئەبوبەکر (Bayar Abubakir)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">ڕێوان ئەمین (Rewan Amin)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">ئەحمەد عەلێ (Ahmad Allée)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">زانا عەلێ (Zana Allée)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">ئەندرێ ئەلسەنعاتی (André Al-Sanati)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">جۆزێف ئەلئیمام (Josef Al-Imam)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">خالید کوردغلی (Khaled Kourdoghli)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">خادم ڕەسول (Khadim Rassoul)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">حەموود مەشعان (Hamoud Mashaan)</span><span class="player-status">مایە</span></div>
+        <div class="player-row"><span class="player-name">عەلا عەباس (Alaa Abbas)</span><span class="player-status">مایە</span></div>
     </div>
 
     <a href="https://www.tiktok.com/@duhok2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK</a>
