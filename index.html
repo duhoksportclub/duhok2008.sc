@@ -98,20 +98,42 @@
         .new-badge { background: #ff4d4d; color: #fff; padding: 2px 6px; border-radius: 5px; font-size: 9px; font-weight: bold; }
         .remain-badge { color: #d4af37; font-size: 11px; font-weight: 500; }
 
-        /* TIKTOK VIDEO CONTAINERS */
-        .video-wrapper {
-            position: relative;
+        /* بچووککرنا بەشێ ڤیدیۆیێ و دانانا وێنەی */
+        .video-card-clickable {
+            display: block;
+            text-decoration: none;
             width: 100%;
-            height: 580px;
+            height: 180px;
             border-radius: 15px;
+            background: linear-gradient(135deg, #101f3c, #050a14);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            position: relative;
             overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
         }
-        .video-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        
+        .video-card-clickable:active {
+            transform: scale(0.97);
+        }
+
+        .video-card-clickable svg {
+            width: 50px;
+            height: 50px;
+            fill: #fff;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        }
+
+        .video-card-clickable span {
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            text-shadow: 1px 1px 5px #000;
         }
 
         .tiktok-btn { 
@@ -138,6 +160,7 @@
 
 <div class="container">
     
+    <!-- ================= MATCHES SECTION ================= -->
     <div id="matches" class="page-content active">
         <div class="card-section">
             <div class="match-status">GULF SUPER CUP</div>
@@ -161,6 +184,7 @@
         </div>
     </div>
 
+    <!-- ================= SQUAD SECTION ================= -->
     <div id="squad" class="page-content">
         <div class="card-section">
             <div class="squad-title">👔 ڕاهێنەر (HEAD COACH)</div>
@@ -213,18 +237,25 @@
         </div>
     </div>
 
+    <!-- ================= VIDEOS SECTION (CLICK TO OPEN) ================= -->
     <div id="videos" class="page-content">
         <div class="card-section">
             <div class="squad-title" style="margin-top: 0;">🎥 نووترین ڤیدیۆ (LATEST TIKTOK)</div>
-            <div class="video-wrapper">
-                <iframe src="https://www.tiktok.com/embed/v2/7476839353982356742" allowfullscreen></iframe>
-            </div>
+            
+            <!-- ئەڤە کارتەکا بچووکە ب دیزاینەکا جوان و ب ئێک کلیک دچیتە د ناڤ ڤیدیۆیێ دا -->
+            <a href="https://vt.tiktok.com/ZSCbLLFFj/" target="_blank" class="video-card-clickable">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.29 22.29c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm-1.29-6.29l5-4-5-4v8z"/>
+                </svg>
+                <span>بۆ دیتنا ڤیدیۆیێ لڤێرێ کلیک بکە</span>
+            </a>
+
         </div>
     </div>
 
     <div id="community" class="page-content"><div class="card-section" style="text-align:center; padding: 40px 10px;">Community section coming soon...</div></div>
 
-    <a href="https://www.tiktok.com/@duhok2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK</a>
+    <a href="https://www.tiktok.com/@duhoc2008.sc" target="_blank" class="tiktok-btn">FOLLOW ON TIKTOK</a>
 </div>
 
 <script>
